@@ -58,3 +58,11 @@ void Search::printFullContactByIndex(Contact *contact, int index){
 	std::cout << rowToPrint;
 }
 
+int Search::getIndexOfContact(){
+	int indexContact;
+	std::string askString = "Write index of contact(1 - 8): ";
+	std::cout << askString;
+	std::cin >> indexContact;
+	return indexContact;
+}
+

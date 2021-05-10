@@ -21,6 +21,7 @@
 class Search
 {
 public:
+	static int getIndexOfContact();
 	static std::string getCorrectString(std::string str);
 	static void printShortContactByIndex(Contact *contact, int index);
 	static void printFullContactByIndex(Contact *contact, int index);
