@@ -1,0 +1,17 @@
+pple files ###
+**/.DS_Store
+
+### Object files ###
+**/src/obj/*.o
+
+### Binar files ###
+**/a.out
+
+
+### CLion files and directories ###
+CMakeLists.txt
+cmake-build-debug/
+**/.idea
+
+
+!.gitignore
