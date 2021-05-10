@@ -14,30 +14,46 @@
 
 #include "Contact.hpp"
 
-//#include <utility>
+void Contact::setFirstName(const std::string &firstName){
+	Contact::firstName = firstName;
+}
 
-Contact::Contact(std::string firstName,
-				std::string lastName,
-				std::string nickName,
-				std::string login,
-				std::string postalAddress,
-				std::string email,
-				std::string birthdayDate,
-				std::string favoriteMeal,
-				std::string underwearColor,
-				std::string darkestSecret,
-				int phoneNumbre)
-				:
-		firstName(std::move(firstName)),
-		lastName(std::move(lastName)),
-		nickName(std::move(nickName)),
-		login(std::move(login)),
-		postalAddress(std::move(postalAddress)),
-		email(std::move(email)),
-		birthdayDate(std::move(birthdayDate)),
-		favoriteMeal(std::move(favoriteMeal)),
-		underwearColor(std::move(underwearColor)),
-		darkestSecret(std::move(darkestSecret)),
-		phoneNumbrer(phoneNumbre){
+void Contact::setLastName(const std::string &lastName){
+	Contact::lastName = lastName;
+}
 
+void Contact::setNickName(const std::string &nickName){
+	Contact::nickName = nickName;
+}
+
+void Contact::setLogin(const std::string &login){
+	Contact::login = login;
+}
+
+void Contact::setPostalAddress(const std::string &postalAddress){
+	Contact::postalAddress = postalAddress;
+}
+
+void Contact::setEmail(const std::string &email){
+	Contact::email = email;
+}
+
+void Contact::setBirthdayDate(const std::string &birthdayDate){
+	Contact::birthdayDate = birthdayDate;
+}
+
+void Contact::setFavoriteMeal(const std::string &favoriteMeal){
+	Contact::favoriteMeal = favoriteMeal;
+}
+
+void Contact::setUnderwearColor(const std::string &underwearColor){
+	Contact::underwearColor = underwearColor;
+}
+
+void Contact::setDarkestSecret(const std::string &darkestSecret){
+	Contact::darkestSecret = darkestSecret;
+}
+
+void Contact::setPhoneNumber(int phoneNumber){
+	Contact::phoneNumbrer = phoneNumber;
 }

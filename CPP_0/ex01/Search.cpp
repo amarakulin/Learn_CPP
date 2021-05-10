@@ -15,37 +15,46 @@
 
 #include "Search.hpp"
 
-void Search::printContactByIndex(Contact contact[8], int index){
-	std::string rowToPrint;
-	rowToPrint = to_string(index);
-	rowToPrint += "|" + getCorrectString(contact[i].firstName)
-				+ "|" + getCorrectString(contact[i].lastName)
-				+ "|" + getCorrectString(contact[i].nickname)
-				+ "|";
-	std::cout << rowToPrint;
-}
-
-std::string Search::getCorrectString(std::string strToTruncate)
+std::string Search::getCorrectString(std::string str)
 {
 	std::string	spaceString;
 	int			numberSpaces;
 	int			width = 10;
 
-	if (strToTruncate.length() > width){
-		return strToTruncate.substr(0, width - 1) + "."
+	if (str.length() > width){
+		return str.substr(0, width - 1) + ".";
 	}
 	else{
-		numberSpaces = width - static_cast <int> (strToTruncate.length());
-		spaceString = std::string(numberSpaces," ");
-		return strToTruncate + spaceString;
+		numberSpaces = width - static_cast <int> (str.length());
+		spaceString = std::string(numberSpaces, ' ');
+		return str + spaceString;
 	}
-	return strToTruncate;
 }
 
-void Search::printAllContacts(Contact *contacts)
-{
-
+void Search::printShortContactByIndex(Contact *contact, int index){
+	std::string rowToPrint;
+	rowToPrint = std::to_string(index);
+	rowToPrint += "|" + getCorrectString(contact[index].firstName)
+				+ "|" + getCorrectString(contact[index].lastName)
+				+ "|" + getCorrectString(contact[index].nickName)
+				+ "|";
+	std::cout << rowToPrint;
 }
 
-void Search::printAllContacts(Contact *, contacts){
+void Search::printFullContactByIndex(Contact *contact, int index){
+	std::string rowToPrint;
+	rowToPrint = std::to_string(index + 1);
+	rowToPrint += "|" + getCorrectString(contact[index].firstName)
+				+ "|" + getCorrectString(contact[index].lastName)
+				+ "|" + getCorrectString(contact[index].nickName)
+				+ "|" + getCorrectString(contact[index].login)
+				+ "|" + getCorrectString(contact[index].postalAddress)
+				+ "|" + getCorrectString(contact[index].email)
+				+ "|" + getCorrectString(contact[index].birthdayDate)
+				+ "|" + getCorrectString(contact[index].favoriteMeal)
+				+ "|" + getCorrectString(contact[index].underwearColor)
+				+ "|" + getCorrectString(contact[index].darkestSecret)
+				+ "|" + getCorrectString(std::to_string(contact[index].phoneNumbrer));
+	std::cout << rowToPrint;
 }
+

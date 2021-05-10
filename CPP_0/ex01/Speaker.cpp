@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   PhoneBookMain.cpp                                                 / V\     */
+/*   Speaker.cpp                                                       / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,12 +13,9 @@
 /* **************************************************************************** */
 
 
-#include "PhoneBookMain.hpp"
-#include "Contact.hpp"
-#include "Search.hpp"
+#include "Speaker.hpp"
 
-int main(){
-	Contact contacts[8];
-
-	return (0);
+void Speaker::askIndexOfContact(){
+	std::string askString = "Write index of contact(1 - 8):\n";
+	std::cout << askString;
 }

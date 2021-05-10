@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   PhoneBookMain.cpp                                                 / V\     */
+/*   General.hpp.h                                                        / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,12 +13,12 @@
 /* **************************************************************************** */
 
 
-#include "PhoneBookMain.hpp"
+#ifndef CPP_0_GENERAL_HPP
+#define CPP_0_GENERAL_HPP
+
+#include <string>
+#include <iostream>
 #include "Contact.hpp"
-#include "Search.hpp"
 
-int main(){
-	Contact contacts[8];
 
-	return (0);
-}
+#endif //CPP_0_GENERAL_HPP

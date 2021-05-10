@@ -16,9 +16,7 @@
 #ifndef CPP_0_CONTACT_HPP
 #define CPP_0_CONTACT_HPP
 
-
-#include <string>
-#include <utility>
+#include "General.hpp"
 
 class Contact
 {
@@ -35,30 +33,17 @@ public:
 	std::string darkestSecret;
 	int phoneNumbrer;
 
-	void setData(std::string firstName,
-			std::string lastName,
-			std::string nickName,
-			std::string login,
-			std::string postalAddress,
-			std::string email,
-			std::string birthdayDate,
-			std::string favoriteMeal,
-			std::string underwearColor,
-			std::string darkestSecret,
-			int phoneNumbre){
-		this->firstName = std::move(firstName);
-		this->lastName = std::move(lastName);
-		this->nickName = std::move(nickName);
-		this->login = std::move(login);
-		this->postalAddress = std::move(postalAddress);
-		this->email = std::move(email);
-		this->birthdayDate = std::move(birthdayDate);
-		this->favoriteMeal = std::move(favoriteMeal);
-		this->underwearColor = std::move(underwearColor);
-		this->darkestSecret = std::move(darkestSecret);
-		this->phoneNumbrer = phoneNumbre;
-
-	}
+	void setFirstName(const std::string &firstName);
+	void setLastName(const std::string &lastName);
+	void setNickName(const std::string &nickName);
+	void setLogin(const std::string &login);
+	void setPostalAddress(const std::string &postalAddress);
+	void setEmail(const std::string &email);
+	void setBirthdayDate(const std::string &birthdayDate);
+	void setFavoriteMeal(const std::string &favoriteMeal);
+	void setUnderwearColor(const std::string &underwearColor);
+	void setDarkestSecret(const std::string &darkestSecret);
+	void setPhoneNumber(int phoneNumber);
 };
 
 #endif

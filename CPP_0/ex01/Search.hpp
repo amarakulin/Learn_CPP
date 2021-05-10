@@ -16,17 +16,14 @@
 #ifndef CPP_0_SEARCH_HPP
 #define CPP_0_SEARCH_HPP
 
-
-#include <string>
-#include "Contact.hpp"
+#include "General.hpp"
 
 class Search
 {
 public:
-	std::string getCorrectString(std::string strToTruncate);
-	void printContactByIndex(Contact contact, int index);
-	void		printAllContacts(Contact contacts[8]);
+	static std::string getCorrectString(std::string str);
+	static void printShortContactByIndex(Contact *contact, int index);
+	static void printFullContactByIndex(Contact *contact, int index);
 };
 
-
-#endif //CPP_0_SEARCH_HPP
+#endif

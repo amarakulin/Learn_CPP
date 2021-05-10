@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   PhoneBookMain.cpp                                                 / V\     */
+/*   Speaker.hpp                                                       / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,12 +13,14 @@
 /* **************************************************************************** */
 
 
-#include "PhoneBookMain.hpp"
-#include "Contact.hpp"
-#include "Search.hpp"
+#ifndef CPP_0_SPEAKER_HPP
+#define CPP_0_SPEAKER_HPP
+#include "General.hpp"
 
-int main(){
-	Contact contacts[8];
+class Speaker
+{
+	static void askIndexOfContact();
+};
 
-	return (0);
-}
+
+#endif //CPP_0_SPEAKER_HPP
