@@ -30,24 +30,25 @@ int Add::askIntConstructor(const std::string& askVariable)
 	return resultVariable;
 }
 
-void Add::askingToFillContact(Contact contact){
-	contact.setFirstName(askStringConstructor("first name"));
-	contact.setLastName(askStringConstructor("last name"));
-	contact.setNickName(askStringConstructor("nick name"));
-	contact.setLogin(askStringConstructor("login"));
-	contact.setPostalAddress(askStringConstructor("postal Address"));
-	contact.setEmail(askStringConstructor("email"));
-	contact.setBirthdayDate(askStringConstructor("birthday date"));
-	contact.setFavoriteMeal(askStringConstructor("favorite meal"));
-	contact.setUnderwearColor(askStringConstructor("underwear color"));
-	contact.setDarkestSecret(askStringConstructor("darkest secret"));
-	contact.setPhoneNumber(askIntConstructor("phone number"));
+void Add::askingToFillContact(Contact contact[8], int index)
+{
+	contact[index].setFirstName(askStringConstructor("first name"));
+	contact[index].setLastName(askStringConstructor("last name"));
+	contact[index].setNickName(askStringConstructor("nick name"));
+	contact[index].setLogin(askStringConstructor("login"));
+	contact[index].setPostalAddress(askStringConstructor("postal Address"));
+	contact[index].setEmail(askStringConstructor("email"));
+	contact[index].setBirthdayDate(askStringConstructor("birthday date"));
+	contact[index].setFavoriteMeal(askStringConstructor("favorite meal"));
+	contact[index].setUnderwearColor(askStringConstructor("underwear color"));
+	contact[index].setDarkestSecret(askStringConstructor("darkest secret"));
+	contact[index].setPhoneNumber(askIntConstructor("phone number"));
 }
 
-bool Add::executeCommandAdd(Contact *contacts, int indexContact, int highestIndexContact)
+bool Add::executeCommandAdd(Contact contacts[8], int indexContact, int highestIndexContact)
 {
 	if (indexContact <= highestIndexContact - 1){
-		Add::askingToFillContact(contacts[indexContact]);
+		Add::askingToFillContact(contacts, indexContact);
 		return true;
 	}
 	else{

@@ -22,7 +22,7 @@ int main(){
 	std::string commandString;
 	Add addCommand;
 	Search searchCommand;
-	while(1){
+	while(1){//TODO rewrite infinity loop
 		std::cout << "Write one of the following command (ADD, SEARCH, EXIT): ";
 		std::cin >> commandString;
 		if (commandString == "ADD"){
