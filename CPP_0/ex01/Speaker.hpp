@@ -17,9 +17,12 @@
 #define CPP_0_SPEAKER_HPP
 #include "General.hpp"
 
-class Speaker
-{
+class Speaker{
+public:
 	static void askIndexOfContact();
+	static void askingToFillContact(Contact contact);
+	static std::string askStringConstructor(const std::string& askVariable);
+	static int askIntConstructor(const std::string& askVariable);
 };
 
 
