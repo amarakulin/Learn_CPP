@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   Speaker.cpp                                                       / V\     */
+/*   Add.cpp                                                       / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,14 +13,9 @@
 /* **************************************************************************** */
 
 
-#include "Speaker.hpp"
+#include "Add.hpp"
 
-void Speaker::askIndexOfContact(){
-	std::string askString = "Write index of contact(1 - 8):\n";
-	std::cout << askString;
-}
-
-std::string Speaker::askStringConstructor(const std::string& askVariable){
+std::string Add::askStringConstructor(const std::string& askVariable){
 	std::string resultVariable;
 	std::cout << "Write " + askVariable + ": ";
 	std::cin >> resultVariable;
@@ -28,7 +23,7 @@ std::string Speaker::askStringConstructor(const std::string& askVariable){
 	return resultVariable;
 }
 
-int Speaker::askIntConstructor(const std::string& askVariable)
+int Add::askIntConstructor(const std::string& askVariable)
 {
 	int resultVariable;
 	std::cout << "Write " + askVariable + ": ";
@@ -37,7 +32,7 @@ int Speaker::askIntConstructor(const std::string& askVariable)
 	return resultVariable;
 }
 
-void Speaker::askingToFillContact(Contact contact){
+void Add::askingToFillContact(Contact contact){
 	contact.setFirstName(askStringConstructor("first name"));
 	contact.setLastName(askStringConstructor("last name"));
 	contact.setNickName(askStringConstructor("nick name"));
