@@ -46,4 +46,16 @@ void Add::askingToFillContact(Contact contact){
 	contact.setPhoneNumber(askIntConstructor("phone number"));
 }
 
+bool Add::executeCommandAdd(Contact *contacts, int indexContact, int highestIndexContact)
+{
+	if (indexContact <= highestIndexContact - 1){
+		Add::askingToFillContact(contacts[indexContact]);
+		return true;
+	}
+	else{
+		std::cout << "Book of contact is full. Try another command!\n";
+		return false;
+	}
+}
+
 
