@@ -19,6 +19,8 @@
 #include <string>
 #include <iostream>
 #include "Contact.hpp"
+#include "Add.hpp"
+#include "Search.hpp"
 
 
 #endif //CPP_0_GENERAL_HPP
