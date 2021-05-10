@@ -33,7 +33,7 @@ std::string Search::getCorrectString(std::string str)
 
 void Search::printShortContactByIndex(Contact *contact, int index){
 	std::string rowToPrint;
-	rowToPrint = std::to_string(index);
+	rowToPrint = std::to_string(index + 1);
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
 				+ "|" + getCorrectString(contact[index].nickName)
@@ -64,5 +64,20 @@ int Search::getIndexOfContact(){
 	std::cout << askString;
 	std::cin >> indexContact;
 	return indexContact;
+}
+
+void Search::executeCommandSearch(Contact *contacts, int indexContact){
+	int indexContactToFullPrint = 0;
+
+	for (int i = 0; i <= indexContact; i++){
+		printShortContactByIndex(contacts, i);
+	}
+	indexContactToFullPrint = getIndexOfContact();
+	if (indexContactToFullPrint <= indexContact){
+		printFullContactByIndex(contacts, indexContactToFullPrint);
+	}
+	else{
+		std::cout << "The '" + std::to_string(indexContactToFullPrint) + "' contact doesn't exist\n";
+	}
 }
 

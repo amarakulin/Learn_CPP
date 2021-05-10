@@ -25,6 +25,7 @@ public:
 	static std::string getCorrectString(std::string str);
 	static void printShortContactByIndex(Contact *contact, int index);
 	static void printFullContactByIndex(Contact *contact, int index);
+	static void executeCommandSearch(Contact *contacts, int indexContact);
 };
 
 #endif
