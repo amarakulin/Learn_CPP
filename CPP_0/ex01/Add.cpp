@@ -19,7 +19,6 @@ std::string Add::askStringConstructor(const std::string& askVariable){
 	std::string resultVariable;
 	std::cout << "Write " + askVariable + ": ";
 	std::cin >> resultVariable;
-	std::cout << "\n";
 	return resultVariable;
 }
 
@@ -28,7 +27,6 @@ int Add::askIntConstructor(const std::string& askVariable)
 	int resultVariable;
 	std::cout << "Write " + askVariable + ": ";
 	std::cin >> resultVariable;
-	std::cout << "\n";
 	return resultVariable;
 }
 
