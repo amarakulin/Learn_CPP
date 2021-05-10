@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   PhoneBookMain.hpp                                                 / V\     */
+/*   PhoneBook.hpp                                                     / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,14 +13,14 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_0_PHONEBOOKMAIN_HPP
-#define CPP_0_PHONEBOOKMAIN_HPP
+#ifndef CPP_0_PHONEBOOK_HPP
+#define CPP_0_PHONEBOOK_HPP
+
+#include <string>
+#include <iostream>
+#include "Contact.hpp"
+#include "Add.hpp"
+#include "Search.hpp"
 
 
-class PhoneBookMain
-{
-
-};
-
-
-#endif //CPP_0_PHONEBOOKMAIN_HPP
+#endif

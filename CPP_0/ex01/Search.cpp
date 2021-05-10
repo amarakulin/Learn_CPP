@@ -13,7 +13,7 @@
 /* **************************************************************************** */
 
 
-#include "Include/General.hpp"
+#include "Include/PhoneBook.hpp"
 
 std::string Search::getCorrectString(std::string str)
 {

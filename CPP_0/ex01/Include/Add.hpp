@@ -15,7 +15,7 @@
 
 #ifndef CPP_0_ADD_HPP
 #define CPP_0_ADD_HPP
-#include "General.hpp"
+#include "PhoneBook.hpp"
 
 class Add{
 public:

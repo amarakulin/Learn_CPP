@@ -16,7 +16,7 @@
 #ifndef CPP_0_CONTACT_HPP
 #define CPP_0_CONTACT_HPP
 
-#include "General.hpp"
+#include "PhoneBook.hpp"
 
 class Contact
 {

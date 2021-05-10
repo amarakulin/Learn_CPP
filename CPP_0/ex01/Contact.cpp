@@ -12,7 +12,7 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
-#include "Include/General.hpp"
+#include "Include/PhoneBook.hpp"
 
 void Contact::setFirstName(const std::string &firstName){
 	Contact::firstName = firstName;
