@@ -19,6 +19,7 @@ class Megaphone{
 	public:
 		void printStrUpperCase(std::string);
 		void outputMegaphone(int, char **);
+
 };
 
 void Megaphone::printStrUpperCase(std::string strToPrint){
@@ -28,7 +29,7 @@ void Megaphone::printStrUpperCase(std::string strToPrint){
 	}
 	else{
 		for (int i = 0; strToPrint[i]; i++){
-			std::cout << (char) std::toupper(strToPrint[i]);
+			std::cout <<  static_cast <char> (std::toupper(strToPrint[i]));
 		}
 	}
 }
