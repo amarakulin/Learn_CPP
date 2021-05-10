@@ -23,6 +23,7 @@ O_FILES = $(addprefix $(OBJDIR)/, $(OBJ))
 IGNORE_PATHS = ! -path "./cmake-build-debug/*"
 
 vpath %.o $(OBJDIR)
+vpath %.h $(INCLUDE)
 
 #Tools to edit text
 RED = \033[1;31m
@@ -40,7 +41,7 @@ TEXT_RESET = \033[0;0m
 all: $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CLANG) $(INCLUDE) $(O_FILES) -o $@
+	@$(CLANG) -I$(INCLUDE) $(O_FILES) -o $@
 	@echo "$(GREEN)Success!"
 
 $(OBJDIR):
