@@ -15,8 +15,8 @@
 NAME = phone_book
 CLANG = clang++
 FLAGS = -Wall -Werror -Wextra
-INCLUDE = ./Includes
-C_FILES = $(shell find . -name "*.c" $(IGNORE_PATHS) -execdir echo {} ';')
+INCLUDE = ./Include
+C_FILES = $(shell find . -name "*.cpp" $(IGNORE_PATHS) -execdir echo {} ';')
 OBJDIR = ./obj
 OBJ = $(C_FILES:%.cpp=%.o)
 O_FILES = $(addprefix $(OBJDIR)/, $(OBJ))

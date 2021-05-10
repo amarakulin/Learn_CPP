@@ -13,7 +13,7 @@
 /* **************************************************************************** */
 
 
-#include "Add.hpp"
+#include "Include/General.hpp"
 
 std::string Add::askStringConstructor(const std::string& askVariable){
 	std::string resultVariable;
