@@ -27,6 +27,7 @@ private:
 	static std::string getCorrectString(std::string str);
 	static void printShortContactByIndex(Contact contact[8], int index);
 	static void printFullContactByIndex(Contact contact[8], int index);
+	static void printNameColumns();
 };
 
 #endif

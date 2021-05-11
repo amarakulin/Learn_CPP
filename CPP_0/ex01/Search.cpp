@@ -12,7 +12,6 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
-
 #include "Include/PhoneBook.hpp"
 
 std::string Search::getCorrectString(std::string str)
@@ -22,7 +21,7 @@ std::string Search::getCorrectString(std::string str)
 	int			width = 10;
 
 	if (str.length() > width){
-		return str.substr(0, width - 1) + ".";
+		return str.substr(0, width) + ".";
 	}
 	else{
 		numberSpaces = width - static_cast <int> (str.length());
@@ -31,9 +30,20 @@ std::string Search::getCorrectString(std::string str)
 	}
 }
 
+void Search::printNameColumns(){
+	std::string rowToPrint;
+	rowToPrint = BLUE + getCorrectString("index")
+					+ "|" + getCorrectString("first name")
+					+ "|" + getCorrectString("last name")
+					+ "|" + getCorrectString("nickname")
+					+ "\n" + RESET;
+	std::cout << rowToPrint;
+}
+
 void Search::printShortContactByIndex(Contact contact[8], int index){
 	std::string rowToPrint;
-	rowToPrint = std::to_string(index);
+	printNameColumns();
+	rowToPrint = GREEN + getCorrectString(std::to_string(index)) + RESET;
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
 				+ "|" + getCorrectString(contact[index].nickName)
@@ -43,7 +53,7 @@ void Search::printShortContactByIndex(Contact contact[8], int index){
 
 void Search::printFullContactByIndex(Contact contact[8], int index){
 	std::string rowToPrint;
-	rowToPrint = std::to_string(index);
+	rowToPrint = GREEN + getCorrectString(std::to_string(index)) + RESET;
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
 				+ "|" + getCorrectString(contact[index].nickName)
@@ -82,4 +92,3 @@ void Search::executeCommandSearch(Contact contacts[8], int indexContact){
 		std::cout << "The '" + std::to_string(indexContactToFullPrint) + "' contact doesn't exist\n";
 	}
 }
-
