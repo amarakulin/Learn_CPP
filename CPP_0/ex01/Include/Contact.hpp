@@ -31,7 +31,7 @@ public:
 	std::string favoriteMeal;
 	std::string underwearColor;
 	std::string darkestSecret;
-	int phoneNumbrer;
+	long phoneNumbrer;
 
 	void setFirstName(const std::string &firstName);
 	void setLastName(const std::string &lastName);
@@ -43,7 +43,7 @@ public:
 	void setFavoriteMeal(const std::string &favoriteMeal);
 	void setUnderwearColor(const std::string &underwearColor);
 	void setDarkestSecret(const std::string &darkestSecret);
-	void setPhoneNumber(int phoneNumber);
+	void setPhoneNumber(long phoneNumber);
 };
 
 #endif

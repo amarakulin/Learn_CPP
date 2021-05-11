@@ -21,7 +21,7 @@ class Add{
 public:
 	static void askingToFillContact(Contact contact[8], int index);
 	static std::string askStringConstructor(const std::string& askVariable);
-	static int askIntConstructor(const std::string& askVariable);
+	static long askIntConstructor(const std::string& askVariable);
 	static bool executeCommandAdd(Contact contacts[8], int indexContact,
 								  int highestIndexContact);
 

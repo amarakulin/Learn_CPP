@@ -54,6 +54,6 @@ void Contact::setDarkestSecret(const std::string &darkestSecret){
 	Contact::darkestSecret = darkestSecret;
 }
 
-void Contact::setPhoneNumber(int phoneNumber){
+void Contact::setPhoneNumber(long phoneNumber){
 	Contact::phoneNumbrer = phoneNumber;
 }

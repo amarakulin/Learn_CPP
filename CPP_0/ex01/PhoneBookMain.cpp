@@ -24,6 +24,15 @@ int getIntFromInput(){
 	return resultVariable;
 }
 
+long getLongFromInput(){
+	long resultVariable;
+	std::string inputStr;
+
+	std::cin >> inputStr;
+	resultVariable = std::stol(inputStr);
+	return resultVariable;
+}
+
 int main(){
 	Contact contacts[8];
 	int indexContact = 0;

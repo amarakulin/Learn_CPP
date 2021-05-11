@@ -65,7 +65,7 @@ int Search::getIndexOfContact(){
 	std::string askString = "Write index of contact(0 - 7): ";
 	std::cout << askString;
 	indexContact = getIntFromInput();
-	return indexContact;
+	return (indexContact);
 }
 
 void Search::executeCommandSearch(Contact contacts[8], int indexContact){

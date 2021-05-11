@@ -22,6 +22,8 @@
 #include "Add.hpp"
 #include "Search.hpp"
 
+long getLongFromInput();
 int getIntFromInput();
+
 
 #endif

@@ -22,12 +22,12 @@ std::string Add::askStringConstructor(const std::string& askVariable){
 	return resultVariable;
 }
 
-int Add::askIntConstructor(const std::string& askVariable)
+long Add::askIntConstructor(const std::string& askVariable)
 {
-	int resultVariable;
+	long resultVariable;
 
 	std::cout << "Write " + askVariable + ": ";
-	resultVariable = getIntFromInput();
+	resultVariable = getLongFromInput();
 	return resultVariable;
 }
 
