@@ -14,7 +14,7 @@
 
 
 #include "Include/PhoneBook.hpp"
-//TODO make a name of row
+
 bool validateNumberString(std::string strToValidate){
 	for (int i = 0; i < strToValidate.length(); i++){
 		if (!isdigit(strToValidate[i])){

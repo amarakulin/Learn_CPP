@@ -42,7 +42,6 @@ void Search::printNameColumns(){
 
 void Search::printShortContactByIndex(Contact contact[8], int index){
 	std::string rowToPrint;
-	printNameColumns();
 	rowToPrint = GREEN + getCorrectString(std::to_string(index)) + RESET;
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
@@ -81,6 +80,7 @@ int Search::getIndexOfContact(){
 void Search::executeCommandSearch(Contact contacts[8], int indexContact){
 	int indexContactToFullPrint = 0;
 
+	printNameColumns();
 	for (int i = 0; i < indexContact; i++){
 		printShortContactByIndex(contacts, i);
 	}
