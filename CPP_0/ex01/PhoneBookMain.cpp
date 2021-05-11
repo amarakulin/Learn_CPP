@@ -15,6 +15,15 @@
 
 #include "Include/PhoneBook.hpp"
 
+int getIntFromInput(){
+	int resultVariable;
+	std::string inputStr;
+
+	std::cin >> inputStr;
+	resultVariable = std::stoi(inputStr);
+	return resultVariable;
+}
+
 int main(){
 	Contact contacts[8];
 	int indexContact = 0;

@@ -22,5 +22,6 @@
 #include "Add.hpp"
 #include "Search.hpp"
 
+int getIntFromInput();
 
 #endif

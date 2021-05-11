@@ -61,9 +61,10 @@ void Search::printFullContactByIndex(Contact contact[8], int index){
 
 int Search::getIndexOfContact(){
 	int indexContact;
+
 	std::string askString = "Write index of contact(0 - 7): ";
 	std::cout << askString;
-	std::cin >> indexContact;
+	indexContact = getIntFromInput();
 	return indexContact;
 }
 
