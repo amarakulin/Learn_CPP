@@ -7,6 +7,8 @@ pple files ###
 ### Binar files ###
 **/a.out
 
+### Header files ###
+**/*.gch
 
 ### CLion files and directories ###
 CMakeLists.txt
