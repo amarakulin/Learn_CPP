@@ -31,7 +31,7 @@ int main(){
 	std::string commandString;
 	Add addCommand;
 	Search searchCommand;
-	while(1){//TODO rewrite infinity loop
+	while(commandString != "EXIT"){
 		std::cout << "Write one of the following command (ADD, SEARCH, EXIT): ";
 		std::cin >> commandString;
 		if (commandString == "ADD"){
@@ -44,10 +44,10 @@ int main(){
 		}
 		else if (commandString == "EXIT"){
 			std::cout << "Bye! Bye!\n";
-			return (0);
 		}
 		else{
 			std::cout << "[-] Error: '" + commandString + "' " + " is invalid command. Try again:\n";
 		}
 	}
+	return (0);
 }
