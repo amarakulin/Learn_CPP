@@ -31,7 +31,7 @@ public:
 	std::string favoriteMeal;
 	std::string underwearColor;
 	std::string darkestSecret;
-	long phoneNumbrer;
+	long phoneNumber;
 
 	void setFirstName(const std::string &firstName);
 	void setLastName(const std::string &lastName);

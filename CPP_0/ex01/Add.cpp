@@ -18,11 +18,11 @@
 std::string Add::askStringConstructor(const std::string& askVariable){
 	std::string resultVariable;
 	std::cout << "Write " + askVariable + ": ";
-	std::cin >> resultVariable;
+	std::getline(std::cin, resultVariable);
 	return resultVariable;
 }
 
-long Add::askIntConstructor(const std::string& askVariable)
+long Add::askLongConstructor(const std::string& askVariable)
 {
 	long resultVariable;
 
@@ -43,7 +43,7 @@ void Add::askingToFillContact(Contact contact[8], int index)
 	contact[index].setFavoriteMeal(askStringConstructor("favorite meal"));
 	contact[index].setUnderwearColor(askStringConstructor("underwear color"));
 	contact[index].setDarkestSecret(askStringConstructor("darkest secret"));
-	contact[index].setPhoneNumber(askIntConstructor("phone number"));
+	contact[index].setPhoneNumber(askLongConstructor("phone number"));
 }
 
 bool Add::executeCommandAdd(Contact contacts[8], int indexContact, int highestIndexContact)

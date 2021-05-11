@@ -54,7 +54,7 @@ void Search::printFullContactByIndex(Contact contact[8], int index){
 				+ "|" + getCorrectString(contact[index].favoriteMeal)
 				+ "|" + getCorrectString(contact[index].underwearColor)
 				+ "|" + getCorrectString(contact[index].darkestSecret)
-				+ "|" + getCorrectString(std::to_string(contact[index].phoneNumbrer))
+				+ "|" + getCorrectString(std::to_string(contact[index].phoneNumber))
 				+ "\n";
 	std::cout << rowToPrint;
 }
