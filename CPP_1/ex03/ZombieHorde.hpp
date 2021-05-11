@@ -16,11 +16,16 @@
 #ifndef CPP_1_ZOMBIEHORDE_HPP
 #define CPP_1_ZOMBIEHORDE_HPP
 
+#include <iostream>
+#include "Zombie.hpp"
 
-class ZombieHorde
-{
+class ZombieHorde{
+public:
+	ZombieHorde(int numberZombies);
+	std::string setZombieType();
+	std::string setZombieName();
 
 };
 
 
-#endif //CPP_1_ZOMBIEHORDE_HPP
+#endif
