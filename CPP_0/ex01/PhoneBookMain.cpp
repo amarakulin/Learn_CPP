@@ -34,7 +34,7 @@ std::string getNumberString(){
 			isValidStr = true;
 		}
 		else{
-			std::cout << "The '" + inputStr + "' not a number. Try again: ";
+			std::cout << BOLDRED "[-] Error:" RESET " The '" + inputStr + "' not a number. Try again: ";
 		}
 	}
 	return inputStr;
@@ -81,7 +81,7 @@ int main(){
 			std::cout << "Bye! Bye!\n";
 		}
 		else{
-			std::cout << "[-] Error: '" + commandString + "' " + " is invalid command. Try again:\n";
+			std::cout << BOLDRED "[-] Error: '" RESET + commandString + "' " + " is invalid command. Try again:\n";
 		}
 	}
 	return (0);

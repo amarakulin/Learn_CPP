@@ -89,6 +89,6 @@ void Search::executeCommandSearch(Contact contacts[8], int indexContact){
 		printFullContactByIndex(contacts, indexContactToFullPrint);
 	}
 	else{
-		std::cout << "The '" + std::to_string(indexContactToFullPrint) + "' contact doesn't exist\n";
+		std::cout << BOLDRED "[-] Error " RESET "The '" + std::to_string(indexContactToFullPrint) + "' contact doesn't exist\n";
 	}
 }
