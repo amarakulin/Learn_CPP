@@ -15,10 +15,29 @@
 
 #include "ZombieEvent.hpp"
 
-void ZombieEvent::setZombieType(std::string type){
+std::string ZombieEvent::setZombieType(){
+	std::string setTypes[5] = {"A", "B", "C", "D", "F"};
+	int index = rand() % 5 + 1;
+	return setTypes[index];
+}
 
+std::string ZombieEvent::setZombieName(){
+	std::string setNames[5] = {"Rick", "Nash", "Big", "Fig", "Pig"};
+	int index = rand() % 5 + 1;
+	return setNames[index];
 }
 
 Zombie *ZombieEvent::newZombie(std::string name){
+	Zombie *newZombie = new Zombie();
+	newZombie->setName(name);
+	newZombie->setType(setZombieType());
+	return newZombie;
+}
+
+void ZombieEvent::randomChump(){
+	Zombie newZombie;
+	newZombie.setName(setZombieName());
+	newZombie.setType(setZombieType());
+	newZombie.announce();
 }
 
