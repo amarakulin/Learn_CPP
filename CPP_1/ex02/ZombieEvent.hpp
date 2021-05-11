@@ -16,11 +16,13 @@
 #ifndef CPP_1_ZOMBIEEVENT_HPP
 #define CPP_1_ZOMBIEEVENT_HPP
 
+#include "Zombie.hpp"
 
-class ZombieEvent
-{
-
+class ZombieEvent{
+public:
+	void setZombieType(std::string type);
+	Zombie* newZombie(std::string name);
 };
 
 
-#endif //CPP_1_ZOMBIEEVENT_HPP
+#endif
