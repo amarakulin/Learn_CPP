@@ -33,17 +33,17 @@ std::string Search::getCorrectString(std::string str)
 
 void Search::printShortContactByIndex(Contact contact[8], int index){
 	std::string rowToPrint;
-	rowToPrint = std::to_string(index + 1);
+	rowToPrint = std::to_string(index);
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
 				+ "|" + getCorrectString(contact[index].nickName)
-				+ "|\n";
+				+ "\n";
 	std::cout << rowToPrint;
 }
 
 void Search::printFullContactByIndex(Contact contact[8], int index){
 	std::string rowToPrint;
-	rowToPrint = std::to_string(index + 1);
+	rowToPrint = std::to_string(index);
 	rowToPrint += "|" + getCorrectString(contact[index].firstName)
 				+ "|" + getCorrectString(contact[index].lastName)
 				+ "|" + getCorrectString(contact[index].nickName)
@@ -61,7 +61,7 @@ void Search::printFullContactByIndex(Contact contact[8], int index){
 
 int Search::getIndexOfContact(){
 	int indexContact;
-	std::string askString = "Write index of contact(1 - 8): ";
+	std::string askString = "Write index of contact(0 - 7): ";
 	std::cout << askString;
 	std::cin >> indexContact;
 	return indexContact;
@@ -70,11 +70,11 @@ int Search::getIndexOfContact(){
 void Search::executeCommandSearch(Contact contacts[8], int indexContact){
 	int indexContactToFullPrint = 0;
 
-	for (int i = 0; i <= indexContact; i++){
+	for (int i = 0; i < indexContact; i++){
 		printShortContactByIndex(contacts, i);
 	}
 	indexContactToFullPrint = getIndexOfContact();
-	if (indexContactToFullPrint <= indexContact){
+	if (indexContactToFullPrint < indexContact){
 		printFullContactByIndex(contacts, indexContactToFullPrint);
 	}
 	else{
