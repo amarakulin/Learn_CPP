@@ -12,4 +12,19 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
+#include "ZombieEvent.hpp"
 
+int main(){
+	std::srand(std::time(NULL));
+	Zombie zombieFromMain;
+	ZombieEvent zombieEvent;
+	zombieFromMain.setName("ZombieFromMain");
+	zombieFromMain.setType(zombieEvent.setZombieType());
+	Zombie *heapZombie = zombieEvent.newZombie("heapZombie");
+	heapZombie->announce();
+	zombieFromMain.announce();
+	zombieEvent.randomChump();
+	delete heapZombie;
+	while(1);
+	return (0);
+}

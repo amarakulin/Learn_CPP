@@ -34,5 +34,5 @@ void Zombie::setType(const std::string &type){
 void Zombie::announce(){
 	std::string infoStr = "<" + Zombie::getName() + " " + "(" +
 								Zombie::getType() +")>";
-	std::cout << infoStr + " Braiiiiiiinnnssss...";
+	std::cout << infoStr + " Braiiiiiiinnnssss...\n";
 }

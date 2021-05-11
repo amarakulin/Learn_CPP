@@ -17,13 +17,13 @@
 
 std::string ZombieEvent::setZombieType(){
 	std::string setTypes[5] = {"A", "B", "C", "D", "F"};
-	int index = rand() % 5 + 1;
+	int index = std::rand() % 5;
 	return setTypes[index];
 }
 
 std::string ZombieEvent::setZombieName(){
 	std::string setNames[5] = {"Rick", "Nash", "Big", "Fig", "Pig"};
-	int index = rand() % 5 + 1;
+	int index = rand() % 5;
 	return setNames[index];
 }
 
