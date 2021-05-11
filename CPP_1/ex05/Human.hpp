@@ -16,12 +16,11 @@
 #ifndef CPP_1_HUMAN_HPP
 #define CPP_1_HUMAN_HPP
 
+#include <iostream>
 
-
-class Human {
+class Human{
 
 };
 
 
-
-#endif //CPP_1_HUMAN_HPP
+#endif
