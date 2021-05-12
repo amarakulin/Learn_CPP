@@ -30,9 +30,11 @@ public:
 
 
 	void printError(const std::string& valueArg,const std::string& errorMessage);
-//	std::string makeCopyFile(std::string filename);
+	void replaceStringInFile(std::string nameSrcFile, std::string from, std::string to);
 
+private:
+	void replaceAll(std::string &srcStr, std::string from, std::string to);
 };
 
 
-#endif //CPP_1_FILEREPLACE_HPP
+#endif

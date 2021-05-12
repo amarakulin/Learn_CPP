@@ -16,32 +16,14 @@
 
 int main(int argc, char *argv[]){
 	FileReplace fileReplace;
-	if (argc != 2){
+	if (argc != 4){
 		fileReplace.printError("","Wrong number of arguments");
 		return (1);
 	}
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+
 	std::string nameSrcFile = argv[1];
-	std::string nameDstFile = nameSrcFile + ".replace";
-
-	std::ifstream srcFile (nameSrcFile);
-	if (!srcFile.is_open()){
-		fileReplace.printError(nameSrcFile,"can't open the file");
-		return (1);
-	}
-
-	std::ofstream dstFile (nameDstFile);
-	if (!dstFile.is_open()){
-		fileReplace.printError(nameDstFile,"can't open the file");
-		return (1);
-	}
-
-	std::string line;
-	while(!srcFile.eof()){
-		std::getline(srcFile, line, '\n');
-		dstFile << line;
-	}
-	dstFile << std::endl;
-	srcFile.close();
-	dstFile.close();
+	fileReplace.replaceStringInFile(nameSrcFile, s1, s2);
 	return (0);
 }
