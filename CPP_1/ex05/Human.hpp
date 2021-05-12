@@ -16,10 +16,15 @@
 #ifndef CPP_1_HUMAN_HPP
 #define CPP_1_HUMAN_HPP
 
+#include "Brain.hpp"
 #include <iostream>
 
 class Human{
+public:
+	const Brain brain;
 
+	const Brain getBrain();
+	std::string identify();
 };
 
 

@@ -14,3 +14,12 @@
 
 
 #include "Human.hpp"
+
+const Brain Human::getBrain(){
+	return this->brain;
+}
+
+std::string Human::identify(){
+	return this->getBrain().identify();
+}
+
