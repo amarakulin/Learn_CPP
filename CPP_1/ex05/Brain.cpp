@@ -16,7 +16,8 @@
 #include "Brain.hpp"
 #include <sstream>
 
-std::string Brain::identify(){
+std::string Brain::identify() const
+{
 	std::ostringstream addressBrain;
 	addressBrain << this;
 	return addressBrain.str();
