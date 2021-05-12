@@ -41,7 +41,7 @@ TEXT_RESET = \033[0;0m
 all: $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJ)
-	$(CLANG) -I$(INCLUDE) $(O_FILES) -o $@
+	@$(CLANG) -I$(INCLUDE) $(O_FILES) -o $@
 	@echo "$(GREEN)Success!"
 
 $(OBJDIR):
@@ -49,7 +49,7 @@ $(OBJDIR):
 
 %.o: %.cpp $(INCLUDE)
 	@echo "$(CYAN)Compiling $<"
-	$(CLANG) -I$(INCLUDE) -c $< -o $(OBJDIR)/$@
+	@$(CLANG) -I$(INCLUDE) -c $< -o $(OBJDIR)/$@
 
 clean:
 	@echo "$(TEXT_RESET)"
