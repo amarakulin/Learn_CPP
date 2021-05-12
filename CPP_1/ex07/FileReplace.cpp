@@ -53,14 +53,16 @@ void FileReplace::replaceStringInFile(std::string nameSrcFile, std::string from,
 	}
 
 	std::string line;
-	while(!srcFile.eof()){
-		std::getline(srcFile, line, '\n');
+	while(std::getline(srcFile, line, '\n')){
 		if (srcFile.fail() && !srcFile.eof()){
 			printError("", "Some error in gnl");
 			break;
 		}
 		replaceAll(line, from, to);
-		dstFile << line << std::endl;
+		dstFile << line;
+		if (!srcFile.eof()){
+			dstFile << std::endl;
+		}
 	}
 	srcFile.close();
 	dstFile.close();
