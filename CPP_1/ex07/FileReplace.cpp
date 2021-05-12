@@ -60,9 +60,8 @@ void FileReplace::replaceStringInFile(std::string nameSrcFile, std::string from,
 			break;
 		}
 		replaceAll(line, from, to);
-		dstFile << line;
+		dstFile << line << std::endl;
 	}
-	dstFile << std::endl;
 	srcFile.close();
 	dstFile.close();
 }
