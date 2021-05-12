@@ -21,3 +21,8 @@ std::string Brain::identify(){
 	addressBrain << this;
 	return addressBrain.str();
 }
+
+Brain::Brain(){
+	std::srand(std::time(NULL));
+	this->iq = 50 + rand() % 100;
+}

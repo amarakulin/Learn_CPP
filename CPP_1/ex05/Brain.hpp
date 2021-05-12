@@ -20,11 +20,12 @@
 
 class Brain{
 public:
-	int levelIntelect;
-	std::string shape;
+	Brain();
+
+	int iq;
 
 	std::string identify();
 };
 
 
-#endif //CPP_1_BRAIN_HPP
+#endif
