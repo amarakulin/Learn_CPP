@@ -18,6 +18,6 @@ int main(){
 	Pony generalPhony[1];
 	generalPhony->ponyOnTheStack();
 	generalPhony->ponyOnTheHeap();
-	while (1);
+//	while (1);
 	return (0);
 }

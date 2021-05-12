@@ -25,6 +25,6 @@ int main(){
 	zombieFromMain.announce();
 	zombieEvent.randomChump();
 	delete heapZombie;
-	while(1);
+//	while(1);
 	return (0);
 }

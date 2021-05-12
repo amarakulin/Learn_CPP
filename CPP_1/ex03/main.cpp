@@ -19,6 +19,6 @@ int main(){
 	ZombieHorde zombieHordeOne(5);
 	ZombieHorde zombieHordeTwo(1);
 	ZombieHorde zombieHordeThree(9);
-	while(1);
+//	while(1);
 	return (0);
 }
