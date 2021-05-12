@@ -19,4 +19,6 @@ int main()
 	Human bob;
 	std::cout << bob.identify() << std::endl;
 	std::cout << bob.getBrain().identify() << std::endl;
+	std::cout << "bob.brain.iq " + std::to_string(bob.brain.iq) << std::endl;
+	std::cout << "bob.getBrain().iq " + std::to_string(bob.getBrain().iq) << std::endl;
 }
