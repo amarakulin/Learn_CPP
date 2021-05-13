@@ -15,15 +15,41 @@
 
 #include "Fixed.hpp"
 
+
 Fixed::Fixed(){
+	std::cout << "Default constructor called" << std::endl;
 	this->_fixedPointValue = 0;
 }
 
-Fixed::Fixed(const Fixed &copyFixed){
+int Fixed::getRawBits(void) const{
+	std::cout << "getRawBits member function called" << std::endl;
+	return this->_fixedPointValue;
+}
+
+void Fixed::setRawBits(const int raw){
+	std::cout << "setRawBits member function called" << std::endl;
+	this->_fixedPointValue = raw;
 }
 
 void Fixed::operator=(const Fixed &fixed){
-	this->_fixedPointValue = fixed._fixedPointValue;
+	std::cout << "Assignation operator called" << std::endl;
+	this->_fixedPointValue = fixed.getRawBits();
 }
 
-Fixed::~Fixed()= default;
+Fixed::~Fixed(){
+	std::cout << "Destructor called" << std::endl;
+}
+
+
+Fixed::Fixed(const Fixed &copyFixed){
+	std::cout << "Copy constructor called" << std::endl;
+	this->_fixedPointValue = copyFixed.getRawBits();
+}
+
+double Fixed::DoubleToFixed(double nbr){
+	return (nbr * (double)(1  << this->_fractionlBits));//multiply to 2
+}
+
+double Fixed::FixedToDouble(double nbr){
+	return (nbr / (double)(1  << this->_fractionlBits));
+}

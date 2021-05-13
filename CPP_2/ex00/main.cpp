@@ -1,10 +1,10 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   Fixed.hpp.h                                                        / V\     */
+/*   main.cpp.c                                                        / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
-/*   Created: 5/12/21 by tilda                                    /      |      */
+/*   Created: 5/13/21 by tilda                                    /      |      */
 /*                                                              /        |      */
 /*                                                            /    \  \ /       */
 /*                                                           (      ) | |       */
@@ -12,27 +12,25 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
-
-#ifndef CPP_2_FIXED_HPP
-#define CPP_2_FIXED_HPP
-
 #include <iostream>
+#include "Fixed.hpp"
 
-class Fixed{
-private:
-	int _fixedPointValue;
-	static const int _fractionlBits = 8;
+int main( void ) {
+//	int aa, bb, cc;
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
-public:
-	Fixed();
-	~Fixed();
-	Fixed(const Fixed &copyFixed);
-	void operator=(const Fixed &fixed);
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
-	double DoubleToFixed(double nbr);
-	double FixedToDouble(double nbr);
-};
-
-
-#endif
+//	aa = a.DoubleToFixed(5.5);
+//	bb = b.DoubleToFixed(5.6);
+//	cc = c.DoubleToFixed(5.7);
+//	std::cout << a.FixedToDouble(aa) << std::endl;
+//	std::cout << b.FixedToDouble(bb) << std::endl;
+//	std::cout << c.FixedToDouble(cc) << std::endl;
+//	std::cout << c.FixedToDouble(cc) + b.FixedToDouble(bb)<< std::endl;
+	return 0;
+}
