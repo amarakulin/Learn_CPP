@@ -32,7 +32,7 @@ Fixed::Fixed(const float floatNumber){
 
 Fixed::Fixed(const Fixed &copyFixed){
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixedPointValue = copyFixed.getRawBits();
+	operator=(copyFixed);
 }
 
 Fixed::~Fixed(){
@@ -40,12 +40,10 @@ Fixed::~Fixed(){
 }
 
 int Fixed::getRawBits(void) const{
-//	std::cout << "getRawBits member function called" << std::endl;
 	return this->_fixedPointValue;
 }
 
 void Fixed::setRawBits(const int raw){
-//	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedPointValue = raw;
 }
 
