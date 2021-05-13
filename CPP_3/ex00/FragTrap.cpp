@@ -17,6 +17,9 @@
 
 FragTrap::FragTrap(const std::string &name) {
 	this->name = name;
+	this->hitPoints = _maxHitPoints;
+	this->energyPoints = _maxEnergyPoints;
+	this->level = 1;
 	std::cout << "FragTrap create with name " << name << std::endl;
 }
 
@@ -31,7 +34,7 @@ void FragTrap::rangeAttack(const std::string &target){
 	std::cout << "FR4G-TP " << this->name
 					<< "range attacks " << target
 					<< "at range, causing " << this->_rangeAttackDamage
-					<< "points of damage!"
+					<< " points of damage!"
 					<< " Level up !" << std::endl;
 }
 
@@ -39,7 +42,7 @@ void FragTrap::meleeAttack(const std::string &target){
 	std::cout << "FR4G-TP " << this->name
 			  << "attacks " << target
 			  << "at melee, causing " << this->_meleeAttackDamage
-			  << "points of damage!" << std::endl;
+			  << " points of damage!" << std::endl;
 }
 
 void FragTrap::takeDamage(unsigned int amount){

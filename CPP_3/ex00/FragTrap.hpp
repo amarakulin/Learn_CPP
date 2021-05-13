@@ -33,9 +33,9 @@ public:
 	~FragTrap();
 	FragTrap(const FragTrap &copy);
 	std::string name;
-	int hitPoints = 100;
-	int energyPoints = 100;
-	int level = 1;
+	int hitPoints;
+	int energyPoints;
+	int level;
 
 	void rangeAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
