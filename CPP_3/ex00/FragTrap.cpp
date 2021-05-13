@@ -22,15 +22,17 @@ FragTrap::FragTrap(const std::string &name) {
 
 FragTrap::~FragTrap(){
 	std::cout << "FR4G-TP " << this->name
-			  << "has been distructed " << std::endl;
+			  << "With level " << level
+			  << " has been distructed " << std::endl;
 }
 
 void FragTrap::rangeAttack(const std::string &target){
-
+	level += 1;
 	std::cout << "FR4G-TP " << this->name
 					<< "range attacks " << target
 					<< "at range, causing " << this->_rangeAttackDamage
-					<< "points of damage!" << std::endl;
+					<< "points of damage!"
+					<< " Level up !" << std::endl;
 }
 
 void FragTrap::meleeAttack(const std::string &target){
