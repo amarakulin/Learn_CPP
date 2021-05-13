@@ -47,8 +47,8 @@ void FragTrap::takeDamage(unsigned int amount){
 	if (hitPoints <= 0){
 		hitPoints = 0;
 	}
-	else if (hitPoints > 100){
-		hitPoints = 100;
+	else if (hitPoints > _maxHitPoints){
+		hitPoints = _maxHitPoints;
 	}
 	std::cout << "FR4G-TP " << this->name
 			  << " gets damage amount " << amount
@@ -58,14 +58,16 @@ void FragTrap::takeDamage(unsigned int amount){
 
 void FragTrap::beRepaired(unsigned int amount){
 	hitPoints += static_cast <int> (amount);
-	if (hitPoints > 100){
-		hitPoints = 100;
+	energyPoints = _maxEnergyPoints;
+	if (hitPoints > _maxHitPoints){
+		hitPoints = _maxHitPoints;
 	}
 	std::cout << "FR4G-TP " << this->name
 			  << " repaired " << amount
 			  << " amounts "
 			  << "now he has  " << hitPoints
-			  << " hit points" << std::endl;
+			  << " hit points "
+			  << "and full energy point"<< std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target){
@@ -84,4 +86,15 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target){
 		std::cout << "Don't have enough energy points!" << std::endl;
 		energyPoints = 0;
 	}
+}
+
+void FragTrap::operator=(const FragTrap &assign){
+	this->hitPoints = assign.hitPoints;
+	this->name = assign.name;
+	this->energyPoints = assign.energyPoints;
+	this->level = assign.level;
+}
+
+FragTrap::FragTrap(const FragTrap &copy){
+	operator=(copy);
 }

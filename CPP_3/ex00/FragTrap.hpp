@@ -20,18 +20,18 @@
 
 class FragTrap{
 private:
-	const int _maxHitPoints = 100;
-	const int _maxEnergyPoints = 100;
-	const int _meleeAttackDamage = 30;
-	const int _rangeAttackDamage = 20;
-	const int _armorDamageReduction = 5;
-	const int _valueEnergyLoss = 25;
+	static const int _maxHitPoints = 100;
+	static const int _maxEnergyPoints = 100;
+	static const int _meleeAttackDamage = 30;
+	static const int _rangeAttackDamage = 20;
+	static const int _armorDamageReduction = 5;
+	static const int _valueEnergyLoss = 25;
 
 public:
 	FragTrap(const std::string &name);
 
 	~FragTrap();
-
+	FragTrap(const FragTrap &copy);
 	std::string name;
 	int hitPoints = 100;
 	int energyPoints = 100;
@@ -42,6 +42,8 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
+	void operator=(const FragTrap &assign);
+
 };
 
 
