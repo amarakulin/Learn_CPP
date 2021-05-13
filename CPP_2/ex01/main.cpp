@@ -15,10 +15,6 @@
 #include <iostream>
 #include "Fixed.hpp"
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fixed){
-	return out << fixed.toFloat();
-}
-
 int main( void ) {
 	Fixed a;
 	Fixed const b( 10 );

@@ -65,3 +65,8 @@ void Fixed::operator=(const Fixed &fixed){
 	this->_fixedPointValue = fixed.getRawBits();
 }
 
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed){
+	out << fixed.toFloat();
+	return out;
+}
+

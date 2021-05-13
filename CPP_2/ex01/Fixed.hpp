@@ -36,8 +36,8 @@ public:
 	void setRawBits( int const raw );
 	float toFloat( void ) const;
 	int toInt( void ) const;
-	void operator<<(struct x);
 };
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 
 #endif
