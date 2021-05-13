@@ -21,6 +21,13 @@ Fixed::Fixed(){
 	this->_fixedPointValue = 0;
 }
 
+
+Fixed::Fixed(const Fixed &copyFixed){
+	std::cout << "Copy constructor called" << std::endl;
+//	this->_fixedPointValue = copyFixed.getRawBits();
+	operator=(copyFixed);
+}
+
 int Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
 	return this->_fixedPointValue;
@@ -40,8 +47,3 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-
-Fixed::Fixed(const Fixed &copyFixed){
-	std::cout << "Copy constructor called" << std::endl;
-	this->_fixedPointValue = copyFixed.getRawBits();
-}
