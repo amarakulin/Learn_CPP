@@ -30,8 +30,6 @@ public:
 	void operator=(const Fixed &fixed);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-	double DoubleToFixed(double nbr);
-	double FixedToDouble(double nbr);
 };
 
 

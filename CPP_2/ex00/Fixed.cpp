@@ -45,11 +45,3 @@ Fixed::Fixed(const Fixed &copyFixed){
 	std::cout << "Copy constructor called" << std::endl;
 	this->_fixedPointValue = copyFixed.getRawBits();
 }
-
-double Fixed::DoubleToFixed(double nbr){
-	return (nbr * (double)(1  << this->_fractionlBits));//multiply to 2
-}
-
-double Fixed::FixedToDouble(double nbr){
-	return (nbr / (double)(1  << this->_fractionlBits));
-}
