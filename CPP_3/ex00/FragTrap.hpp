@@ -25,6 +25,7 @@ private:
 	const int _meleeAttackDamage = 30;
 	const int _rangeAttackDamage = 20;
 	const int _armorDamageReduction = 5;
+	const int _valueEnergyLoss = 25;
 
 public:
 	FragTrap(const std::string &name);
