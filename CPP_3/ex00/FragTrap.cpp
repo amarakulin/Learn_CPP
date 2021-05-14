@@ -23,9 +23,13 @@ FragTrap::FragTrap(const std::string &name) {
 	std::cout << "FragTrap create with name " << name << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &copy){
+	operator=(copy);
+}
+
 FragTrap::~FragTrap(){
 	std::cout << "FR4G-TP " << this->name
-			  << "With level " << level
+			  << " with level " << level
 			  << " has been distructed " << std::endl;
 }
 
@@ -74,7 +78,6 @@ void FragTrap::beRepaired(unsigned int amount){
 }
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target){
-	std::srand(std::time(NULL));
 	energyPoints -= _valueEnergyLoss;
 	if (energyPoints > 0){
 		int randomValue = std::rand() % 5;
@@ -83,7 +86,7 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target){
 				  << " attacks " << target
 				  << " at " << nameAttacks[randomValue]
 				  << ", causing " << randomValue * 5
-				  << "points of damage!" << std::endl;
+				  << " points of damage!" << std::endl;
 	}
 	else{
 		std::cout << "Don't have enough energy points!" << std::endl;
@@ -96,8 +99,4 @@ void FragTrap::operator=(const FragTrap &assign){
 	this->name = assign.name;
 	this->energyPoints = assign.energyPoints;
 	this->level = assign.level;
-}
-
-FragTrap::FragTrap(const FragTrap &copy){
-	operator=(copy);
 }

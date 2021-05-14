@@ -16,8 +16,10 @@
 
 int main(){
 	FragTrap Rick("Rick");
+	FragTrap CopyRick (Rick);
 	FragTrap Nick("Nick");
 
+	std::srand(std::time(NULL));
 	Rick.meleeAttack("attacks something");
 	Rick.rangeAttack("attacks a box");
 	Rick.takeDamage(50);
@@ -30,6 +32,10 @@ int main(){
 	Rick.beRepaired(20);
 	Rick.takeDamage(90);
 	Rick.takeDamage(90);
+	Nick = Rick;
+	Nick.vaulthunter_dot_exe("Niks target");
+	Nick.takeDamage(90);
+	CopyRick.takeDamage(90);
 
 	return (0);
 }
