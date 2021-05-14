@@ -14,6 +14,8 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "ClapTrap.hpp"
 
 int main(){
 	ClapTrap WeakRobot("WeakRobot", 2, 4, 5, 6, 0, 2, 2);
@@ -23,13 +25,16 @@ int main(){
 	ScavTrap Nate("Nate");
 	ScavTrap CopyNate (Nate);
 	ScavTrap Fred("Fred");
+	NinjaTrap Ninja("Ninja First");
+	NinjaTrap CopyNinja (Ninja);
+	NinjaTrap Ninja2("Ninja Second");
 
+	std::srand(std::time(NULL));
 	WeakRobot.rangeAttack("candy");
 	WeakRobot.meleeAttack("pankakes");
 	WeakRobot.takeDamage(1);
 	WeakRobot.beRepaired(20);
-	std::cout << "++++++++++++++++++++++++" << std::endl;
-	std::srand(std::time(NULL));
+	std::cout << "+++++++++++FragTrap+++++++++++++" << std::endl;
 	Rick.meleeAttack(" something");
 	Rick.rangeAttack(" a box");
 	Rick.takeDamage(50);
@@ -45,7 +50,7 @@ int main(){
 	Nick.vaulthunter_dot_exe("Niks target");
 	Nick.takeDamage(90);
 	CopyRick.takeDamage(90);
-	std::cout << "++++++++++++++++++++++++" << std::endl;
+	std::cout << "+++++++++++ScavTrap+++++++++++++" << std::endl;
 	Nate.meleeAttack("something");
 	Nate.rangeAttack("a box");
 	Nate.takeDamage(50);
@@ -62,6 +67,22 @@ int main(){
 	Fred.challengeNewcomer();
 	Fred.takeDamage(90);
 	CopyNate.takeDamage(90);
+
+	std::cout << "+++++++++NINJA+++++++++++++++" << std::endl;
+	Ninja.meleeAttack(" something");
+	Ninja.rangeAttack(" a box");
+	Ninja.takeDamage(50);
+	Ninja.ninjaShoebox(WeakRobot);
+	Ninja.ninjaShoebox(Rick);
+	Ninja.ninjaShoebox(Nate);
+	Ninja.ninjaShoebox(Ninja);
+	Ninja.ninjaShoebox(Ninja2);
+	Ninja.beRepaired(20);
+	Ninja.takeDamage(90);
+	Ninja2 = Ninja;
+	Ninja2.ninjaShoebox(Fred);
+	Ninja2.takeDamage(90);
+	CopyNinja.takeDamage(90);
 
 	return (0);
 }
