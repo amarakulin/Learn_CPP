@@ -25,6 +25,7 @@ private:
 	static const int _meleeAttackDamage = 20;
 	static const int _rangeAttackDamage = 15;
 	static const int _armorDamageReduction = 3;
+	static const int _valueEnergyLoss = 40;
 
 public:
 	ScavTrap(const std::string &name);
@@ -35,11 +36,13 @@ public:
 	int hitPoints;
 	int energyPoints;
 	int level;
+	int measureIndividuality;
 
 	void rangeAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	void challengeNewcomer();
 	void operator=(const ScavTrap &assign);
 
 };

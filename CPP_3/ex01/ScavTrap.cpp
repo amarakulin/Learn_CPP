@@ -21,6 +21,7 @@ ScavTrap::ScavTrap(const std::string &name) {
 	this->hitPoints = _maxHitPoints;
 	this->energyPoints = _maxEnergyPoints;
 	this->level = 1;
+	this->measureIndividuality = 5;
 	std::cout << "ScavTrap create with name " << name
 			  << " with " << hitPoints
 			  << " hits and " << energyPoints
@@ -32,8 +33,9 @@ ScavTrap::ScavTrap(const ScavTrap &copy){
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "CPP_M_03 " << this->name
 			  << " with level " << level
+			  << " and measure individuality " << measureIndividuality
 			  << ". Left " << hitPoints
 			  << " hits and " << energyPoints
 			  << " energy points!"
@@ -42,7 +44,7 @@ ScavTrap::~ScavTrap(){
 
 void ScavTrap::rangeAttack(const std::string &target){
 	level += 1;
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "CPP_M_03 " << this->name
 			  << "range attacks " << target
 			  << "at range, causing " << this->_rangeAttackDamage
 			  << " points of damage!"
@@ -50,7 +52,7 @@ void ScavTrap::rangeAttack(const std::string &target){
 }
 
 void ScavTrap::meleeAttack(const std::string &target){
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "CPP_M_03 " << this->name
 			  << "attacks " << target
 			  << "at melee, causing " << this->_meleeAttackDamage
 			  << " points of damage!" << std::endl;
@@ -64,7 +66,7 @@ void ScavTrap::takeDamage(unsigned int amount){
 	else if (hitPoints > _maxHitPoints){
 		hitPoints = _maxHitPoints;
 	}
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "CPP_M_03 " << this->name
 			  << " gets damage amount " << amount
 			  << " now he has  " << hitPoints
 			  << " hit points" << std::endl;
@@ -76,7 +78,7 @@ void ScavTrap::beRepaired(unsigned int amount){
 	if (hitPoints > _maxHitPoints){
 		hitPoints = _maxHitPoints;
 	}
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "CPP_M_03 " << this->name
 			  << " repaired " << amount
 			  << " amounts "
 			  << "now he has  " << hitPoints
@@ -89,4 +91,20 @@ void ScavTrap::operator=(const ScavTrap &assign){
 	this->name = assign.name;
 	this->energyPoints = assign.energyPoints;
 	this->level = assign.level;
+}
+
+void ScavTrap::challengeNewcomer(){
+	energyPoints -= _valueEnergyLoss;
+	if (energyPoints > 0){
+		int randomValue = std::rand() % 5;
+		std::string nameChallenge[5] = {"A", "B", "C", "D", "E"};
+		std::cout << "CPP_M_03 " << this->name
+				  << " give a challenge " << nameChallenge[randomValue]
+				  << std::endl;
+		measureIndividuality += 5;
+	}
+	else{
+		std::cout << "Don't have enough energy points!" << std::endl;
+		energyPoints = 0;
+	}
 }
