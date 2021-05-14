@@ -17,30 +17,19 @@
 #define CPP_3_FRAGTRAP_HPP
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
-class FragTrap{
-private:
-	static const int _maxHitPoints = 100;
-	static const int _maxEnergyPoints = 100;
-	static const int _meleeAttackDamage = 30;
-	static const int _rangeAttackDamage = 20;
-	static const int _armorDamageReduction = 5;
-	static const int _valueEnergyLoss = 25;
-
+class FragTrap : public ClapTrap{
 public:
-	FragTrap(const std::string &name);
+	FragTrap(const std::string &name1, const std::string &name);
 
 	~FragTrap();
-	FragTrap(const FragTrap &copy);
+	FragTrap(const ClapTrap &copy1, const FragTrap &copy);
 	std::string name;
 	int hitPoints;
 	int energyPoints;
 	int level;
 
-	void rangeAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
 	void operator=(const FragTrap &assign);
 
