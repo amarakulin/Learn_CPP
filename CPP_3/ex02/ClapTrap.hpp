@@ -28,7 +28,12 @@ protected:
 	int valueEnergyLoss;
 
 public:
-	ClapTrap(const std::string &name);
+	ClapTrap(const std::string &name,
+			 int maxEnergyPoints,
+			 int meleeAttackDamage,
+			 int rangeAttackDamage,
+			 int armorDamageReduction,
+			 int valueEnergyLoss);
 
 	~ClapTrap();
 	ClapTrap(const ClapTrap &copy);

@@ -15,17 +15,22 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name){
+ClapTrap::ClapTrap(const std::string &name,
+					int maxEnergyPoints,
+					int meleeAttackDamage,
+					int rangeAttackDamage,
+					int armorDamageReduction,
+					int valueEnergyLoss){
+	this->maxHitPoints = 100;
+	this->maxEnergyPoints = maxEnergyPoints;
+	this->meleeAttackDamage = meleeAttackDamage;
+	this->rangeAttackDamage = rangeAttackDamage;
+	this->armorDamageReduction = armorDamageReduction;
+	this->valueEnergyLoss = valueEnergyLoss;
 	this->name = name;
 	this->hitPoints = maxHitPoints;
 	this->energyPoints = maxEnergyPoints;
 	this->level = 1;
-	maxHitPoints = 100;
-	maxEnergyPoints = 100;
-	meleeAttackDamage = 30;
-	rangeAttackDamage = 20;
-	armorDamageReduction = 5;
-	valueEnergyLoss = 25;
 	std::cout << "Create ROBOT with name " << name
 			  << " with " << hitPoints
 			  << " hits and " << energyPoints
@@ -91,10 +96,4 @@ void ClapTrap::operator=(const ClapTrap &assign){
 	this->name = assign.name;
 	this->energyPoints = assign.energyPoints;
 	this->level = assign.level;
-	maxHitPoints = 100;
-	maxEnergyPoints = 100;
-	meleeAttackDamage = 30;
-	rangeAttackDamage = 20;
-	armorDamageReduction = 5;
-	valueEnergyLoss = 25;
 }

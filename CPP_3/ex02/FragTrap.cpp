@@ -17,15 +17,8 @@
 #include "ClapTrap.hpp"
 
 FragTrap::FragTrap(const std::string &name1, const std::string &name)
-		: ClapTrap(name1)
-{
-	maxHitPoints = 100;
-	maxEnergyPoints = 100;
-	meleeAttackDamage = 30;
-	rangeAttackDamage = 20;
-	armorDamageReduction = 5;
-	valueEnergyLoss = 25;
-}
+		: ClapTrap(name1, 100, 30, 20, 5, 25)
+{}
 
 FragTrap::FragTrap(const ClapTrap &copy1, const FragTrap &copy) : ClapTrap(copy1){
 	operator=(copy);
@@ -62,10 +55,4 @@ void FragTrap::operator=(const FragTrap &assign){
 	this->name = assign.name;
 	this->energyPoints = assign.energyPoints;
 	this->level = assign.level;
-	maxHitPoints = 100;
-	maxEnergyPoints = 100;
-	meleeAttackDamage = 30;
-	rangeAttackDamage = 20;
-	armorDamageReduction = 5;
-	valueEnergyLoss = 25;
 }
