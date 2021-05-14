@@ -16,16 +16,15 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap(const std::string &name1, const std::string &name)
-		: ClapTrap(name1, 100, 30, 20, 5, 25)
-{}
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name, 100, 100, 30, 20, 5, 25, 1){
+}
 
-FragTrap::FragTrap(const ClapTrap &copy1, const FragTrap &copy) : ClapTrap(copy1){
+FragTrap::FragTrap(const FragTrap &copy){
 	operator=(copy);
 }
 
 FragTrap::~FragTrap(){
-	std::cout << "FR4G-TP " << this->name
+	std::cout << "FR4G-TP " << name
 			  << " with level " << level
 			  << ". Left " << hitPoints
 			  << " hits and " << energyPoints
@@ -35,10 +34,10 @@ FragTrap::~FragTrap(){
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target){
 	energyPoints -= valueEnergyLoss;
-	if (energyPoints > 0){
+	if (energyPoints >= 0){
 		int randomValue = std::rand() % 5;
 		std::string nameAttacks[5] = {"A", "B", "C", "D", "E"};
-		std::cout << "FR4G-TP " << this->name
+		std::cout << "FR4G-TP " << name
 				  << " attacks " << target
 				  << " at " << nameAttacks[randomValue]
 				  << ", causing " << randomValue * 5
@@ -50,9 +49,12 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target){
 	}
 }
 
-void FragTrap::operator=(const FragTrap &assign){
-	this->hitPoints = assign.hitPoints;
-	this->name = assign.name;
-	this->energyPoints = assign.energyPoints;
-	this->level = assign.level;
+FragTrap &FragTrap::operator=(const FragTrap &assign){
+	if (this != &assign) {
+		this->hitPoints = assign.hitPoints;
+		this->name = assign.name;
+		this->energyPoints = assign.energyPoints;
+		this->level = assign.level;
+	}
+	return (*this);
 }

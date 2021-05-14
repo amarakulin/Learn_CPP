@@ -26,22 +26,26 @@ protected:
 	int rangeAttackDamage;
 	int armorDamageReduction;
 	int valueEnergyLoss;
+	int startLevel;
 
 public:
+	ClapTrap();
 	ClapTrap(const std::string &name,
+			 int maxHitPoints,
 			 int maxEnergyPoints,
 			 int meleeAttackDamage,
 			 int rangeAttackDamage,
 			 int armorDamageReduction,
-			 int valueEnergyLoss);
+			 int valueEnergyLoss,
+			 int startLevel);
 
 	~ClapTrap();
 	ClapTrap(const ClapTrap &copy);
 	std::string name;
 	int hitPoints;
 	int energyPoints;
-
 	int level;
+
 	void rangeAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);

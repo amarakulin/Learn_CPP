@@ -15,9 +15,8 @@
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-
-ScavTrap::ScavTrap(const std::string &name1, const std::string &name)
-		: ClapTrap(name1, 50, 20, 15, 3, 40)
+//50, 20, 15, 3, 40
+ScavTrap::ScavTrap(const std::string &name1) : ClapTrap(name1, 100, 50, 20, 15, 3, 40, 1)
 {
 	this->measureIndividuality = 5;
 }

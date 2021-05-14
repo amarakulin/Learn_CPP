@@ -21,17 +21,13 @@
 
 class FragTrap : public ClapTrap{
 public:
-	FragTrap(const std::string &name1, const std::string &name);
-
+	FragTrap();
+	FragTrap(const std::string &name);
 	~FragTrap();
-	FragTrap(const ClapTrap &copy1, const FragTrap &copy);
-	std::string name;
-	int hitPoints;
-	int energyPoints;
-	int level;
+	FragTrap(const FragTrap &copy);
 
 	void vaulthunter_dot_exe(std::string const & target);
-	void operator=(const FragTrap &assign);
+	FragTrap &operator=(const FragTrap &assign);
 
 };
 

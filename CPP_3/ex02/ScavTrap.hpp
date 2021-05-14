@@ -21,7 +21,7 @@
 
 class ScavTrap : public ClapTrap{
 public:
-	ScavTrap(const std::string &name1, const std::string &name);
+	ScavTrap(const std::string &name1);
 
 	~ScavTrap();
 	ScavTrap(const ClapTrap &copy1, const ScavTrap &copy);
