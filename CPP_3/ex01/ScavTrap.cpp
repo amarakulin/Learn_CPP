@@ -87,7 +87,7 @@ void ScavTrap::beRepaired(unsigned int amount){
 
 void ScavTrap::challengeNewcomer(){
 	energyPoints -= _valueEnergyLoss;
-	if (energyPoints > 0){
+	if (energyPoints >= 0){
 		int randomValue = std::rand() % 5;
 		std::string nameChallenge[5] = {"A", "B", "C", "D", "E"};
 		std::cout << "CPP_M_03 " << this->name

@@ -85,7 +85,7 @@ void FragTrap::beRepaired(unsigned int amount){
 
 void FragTrap::vaulthunter_dot_exe(const std::string &target){
 	energyPoints -= _valueEnergyLoss;
-	if (energyPoints > 0){
+	if (energyPoints >= 0){
 		int randomValue = std::rand() % 5;
 		std::string nameAttacks[5] = {"A", "B", "C", "D", "E"};
 		std::cout << "FR4G-TP " << this->name
