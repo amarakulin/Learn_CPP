@@ -21,10 +21,11 @@
 
 class ScavTrap : public ClapTrap{
 public:
+	ScavTrap();
 	ScavTrap(const std::string &name1);
-
 	~ScavTrap();
-	ScavTrap(const ClapTrap &copy1, const ScavTrap &copy);
+	ScavTrap(const ScavTrap &copy);
+
 	std::string name;
 	int hitPoints;
 	int energyPoints;
@@ -32,7 +33,7 @@ public:
 	int measureIndividuality;
 
 	void challengeNewcomer();
-	void operator=(const ScavTrap &assign);
+	ScavTrap &operator=(const ScavTrap &assign);
 
 };
 

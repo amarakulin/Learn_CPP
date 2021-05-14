@@ -38,9 +38,9 @@ public:
 			 int armorDamageReduction,
 			 int valueEnergyLoss,
 			 int startLevel);
-
 	~ClapTrap();
 	ClapTrap(const ClapTrap &copy);
+
 	std::string name;
 	int hitPoints;
 	int energyPoints;
@@ -50,7 +50,7 @@ public:
 	void meleeAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	void operator=(const ClapTrap &assign);
+	ClapTrap &operator=(const ClapTrap &assign);
 };
 
 

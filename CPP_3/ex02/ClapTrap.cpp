@@ -15,10 +15,6 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){
-}
-
-
 ClapTrap::ClapTrap(const std::string &name,
 					int maxHitPoints,
 					int maxEnergyPoints,
@@ -50,7 +46,6 @@ ClapTrap::ClapTrap(const ClapTrap &copy){
 }
 
 ClapTrap::~ClapTrap(){
-
 }
 
 void ClapTrap::rangeAttack(const std::string &target){
@@ -98,10 +93,12 @@ void ClapTrap::beRepaired(unsigned int amount){
 			  << "and full energy point"<< std::endl;
 }
 
-
-void ClapTrap::operator=(const ClapTrap &assign){
-	this->hitPoints = assign.hitPoints;
-	this->name = assign.name;
-	this->energyPoints = assign.energyPoints;
-	this->level = assign.level;
+ClapTrap &ClapTrap::operator=(const ClapTrap &assign){
+	if (this != &assign){
+		this->hitPoints = assign.hitPoints;
+		this->name = assign.name;
+		this->energyPoints = assign.energyPoints;
+		this->level = assign.level;
+	}
+	return *this;
 }

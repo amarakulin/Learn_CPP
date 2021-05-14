@@ -94,9 +94,12 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target){
 	}
 }
 
-void FragTrap::operator=(const FragTrap &assign){
-	this->hitPoints = assign.hitPoints;
-	this->name = assign.name;
-	this->energyPoints = assign.energyPoints;
-	this->level = assign.level;
+FragTrap &FragTrap::operator=(const FragTrap &assign){
+	if (this != &assign){
+		this->hitPoints = assign.hitPoints;
+		this->name = assign.name;
+		this->energyPoints = assign.energyPoints;
+		this->level = assign.level;
+	}
+	return *this;
 }

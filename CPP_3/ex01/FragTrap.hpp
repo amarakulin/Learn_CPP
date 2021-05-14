@@ -28,10 +28,11 @@ private:
 	static const int _valueEnergyLoss = 25;
 
 public:
+	FragTrap();
 	FragTrap(const std::string &name);
-
 	~FragTrap();
 	FragTrap(const FragTrap &copy);
+
 	std::string name;
 	int hitPoints;
 	int energyPoints;
@@ -42,7 +43,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string const & target);
-	void operator=(const FragTrap &assign);
+	FragTrap &operator=(const FragTrap &assign);
 
 };
 

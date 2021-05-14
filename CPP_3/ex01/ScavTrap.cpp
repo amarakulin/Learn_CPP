@@ -15,7 +15,6 @@
 
 #include "ScavTrap.hpp"
 
-
 ScavTrap::ScavTrap(const std::string &name) {
 	this->name = name;
 	this->hitPoints = _maxHitPoints;
@@ -86,14 +85,6 @@ void ScavTrap::beRepaired(unsigned int amount){
 			  << "and full energy point"<< std::endl;
 }
 
-void ScavTrap::operator=(const ScavTrap &assign){
-	this->hitPoints = assign.hitPoints;
-	this->name = assign.name;
-	this->energyPoints = assign.energyPoints;
-	this->level = assign.level;
-	this->measureIndividuality = assign.measureIndividuality;
-}
-
 void ScavTrap::challengeNewcomer(){
 	energyPoints -= _valueEnergyLoss;
 	if (energyPoints > 0){
@@ -108,4 +99,15 @@ void ScavTrap::challengeNewcomer(){
 		std::cout << "Don't have enough energy points!" << std::endl;
 		energyPoints = 0;
 	}
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &assign){
+	if (this != &assign){
+		this->hitPoints = assign.hitPoints;
+		this->name = assign.name;
+		this->energyPoints = assign.energyPoints;
+		this->level = assign.level;
+		this->measureIndividuality = assign.measureIndividuality;
+	}
+	return *this;
 }

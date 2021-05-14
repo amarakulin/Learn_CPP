@@ -28,10 +28,11 @@ private:
 	static const int _valueEnergyLoss = 40;
 
 public:
+	ScavTrap();
 	ScavTrap(const std::string &name);
-
 	~ScavTrap();
 	ScavTrap(const ScavTrap &copy);
+
 	std::string name;
 	int hitPoints;
 	int energyPoints;
@@ -43,7 +44,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void challengeNewcomer();
-	void operator=(const ScavTrap &assign);
+	ScavTrap &operator=(const ScavTrap &assign);
 
 };
 

@@ -15,18 +15,17 @@
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-//50, 20, 15, 3, 40
-ScavTrap::ScavTrap(const std::string &name1) : ClapTrap(name1, 100, 50, 20, 15, 3, 40, 1)
-{
+
+ScavTrap::ScavTrap(const std::string &name1) : ClapTrap(name1, 100, 50, 20, 15, 3, 40, 1){
 	this->measureIndividuality = 5;
 }
 
-ScavTrap::ScavTrap(const ClapTrap &copy1, const ScavTrap &copy) : ClapTrap(copy1){
+ScavTrap::ScavTrap(const ScavTrap &copy){
 	operator=(copy);
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "CPP_M_03 " << this->name
+	std::cout << "CPP_M_03 " << name
 			  << " with level " << level
 			  << " and measure individuality " << measureIndividuality
 			  << ". Left " << hitPoints
@@ -40,7 +39,7 @@ void ScavTrap::challengeNewcomer(){
 	if (energyPoints > 0){
 		int randomValue = std::rand() % 5;
 		std::string nameChallenge[5] = {"A", "B", "C", "D", "E"};
-		std::cout << "CPP_M_03 " << this->name
+		std::cout << "CPP_M_03 " << name
 				  << " give a challenge " << nameChallenge[randomValue]
 				  << std::endl;
 		measureIndividuality += 5;
@@ -51,10 +50,13 @@ void ScavTrap::challengeNewcomer(){
 	}
 }
 
-void ScavTrap::operator=(const ScavTrap &assign){
-	this->hitPoints = assign.hitPoints;
-	this->name = assign.name;
-	this->energyPoints = assign.energyPoints;
-	this->level = assign.level;
-	this->measureIndividuality = assign.measureIndividuality;
+ScavTrap &ScavTrap::operator=(const ScavTrap &assign){
+	if (this != &assign){
+		this->hitPoints = assign.hitPoints;
+		this->name = assign.name;
+		this->energyPoints = assign.energyPoints;
+		this->level = assign.level;
+		this->measureIndividuality = assign.measureIndividuality;
+	}
+	return *this;
 }
