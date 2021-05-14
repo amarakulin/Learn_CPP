@@ -91,6 +91,7 @@ void ScavTrap::operator=(const ScavTrap &assign){
 	this->name = assign.name;
 	this->energyPoints = assign.energyPoints;
 	this->level = assign.level;
+	this->measureIndividuality = assign.measureIndividuality;
 }
 
 void ScavTrap::challengeNewcomer(){
