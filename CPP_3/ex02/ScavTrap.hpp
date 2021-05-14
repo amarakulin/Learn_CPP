@@ -26,10 +26,6 @@ public:
 	~ScavTrap();
 	ScavTrap(const ScavTrap &copy);
 
-	std::string name;
-	int hitPoints;
-	int energyPoints;
-	int level;
 	int measureIndividuality;
 
 	void challengeNewcomer();
