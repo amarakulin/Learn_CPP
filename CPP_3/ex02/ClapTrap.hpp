@@ -16,9 +16,31 @@
 #ifndef CPP_3_CLAPTRAP_HPP
 #define CPP_3_CLAPTRAP_HPP
 
+#include <iostream>
 
 class ClapTrap{
+protected:
+	int _maxHitPoints = 100;
+	int _maxEnergyPoints = 100;
+	int _meleeAttackDamage = 30;
+	int _rangeAttackDamage = 20;
+	int _armorDamageReduction = 5;
+	int _valueEnergyLoss = 25;
+public:
+	ClapTrap(const std::string &name);
 
+	~ClapTrap();
+	ClapTrap(const ClapTrap &copy);
+	std::string name;
+	int hitPoints;
+	int energyPoints;
+
+	int level;
+	void rangeAttack(std::string const &target);
+	void meleeAttack(std::string const &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	void operator=(const ClapTrap &assign);
 };
 
 
