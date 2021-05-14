@@ -19,7 +19,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap{
+class FragTrap : virtual public ClapTrap{
 public:
 	FragTrap();
 	FragTrap(const std::string &name);
@@ -29,6 +29,9 @@ public:
 	void vaulthunter_dot_exe(std::string const & target);
 	FragTrap &operator=(const FragTrap &assign);
 
+	enum bestSettings{
+		BEST_SETTINGS
+	};
 };
 
 

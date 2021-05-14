@@ -30,14 +30,7 @@ protected:
 
 public:
 	ClapTrap();
-	ClapTrap(const std::string &name,
-			 int maxHitPoints,
-			 int maxEnergyPoints,
-			 int meleeAttackDamage,
-			 int rangeAttackDamage,
-			 int armorDamageReduction,
-			 int valueEnergyLoss,
-			 int startLevel);
+	ClapTrap(const std::string &name);
 	~ClapTrap();
 	ClapTrap(const ClapTrap &copy);
 
@@ -46,10 +39,10 @@ public:
 	int energyPoints;
 	int level;
 
-	void rangeAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	virtual void rangeAttack(std::string const &target);
+	virtual void meleeAttack(std::string const &target);
+	virtual void takeDamage(unsigned int amount);
+	virtual void beRepaired(unsigned int amount);
 	ClapTrap &operator=(const ClapTrap &assign);
 };
 

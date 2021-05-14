@@ -21,7 +21,7 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-class NinjaTrap : public ClapTrap{
+class NinjaTrap : virtual public ClapTrap{
 public:
 	NinjaTrap();
 	NinjaTrap(std::string name);
