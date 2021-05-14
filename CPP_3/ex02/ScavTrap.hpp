@@ -17,31 +17,20 @@
 #define CPP_3_SCAVTRAP_HPP
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
-class ScavTrap{
-private:
-	static const int _maxHitPoints = 100;
-	static const int _maxEnergyPoints = 50;
-	static const int _meleeAttackDamage = 20;
-	static const int _rangeAttackDamage = 15;
-	static const int _armorDamageReduction = 3;
-	static const int _valueEnergyLoss = 40;
-
+class ScavTrap : public ClapTrap{
 public:
-	ScavTrap(const std::string &name);
+	ScavTrap(const std::string &name1, const std::string &name);
 
 	~ScavTrap();
-	ScavTrap(const ScavTrap &copy);
+	ScavTrap(const ClapTrap &copy1, const ScavTrap &copy);
 	std::string name;
 	int hitPoints;
 	int energyPoints;
 	int level;
 	int measureIndividuality;
 
-	void rangeAttack(std::string const &target);
-	void meleeAttack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void challengeNewcomer();
 	void operator=(const ScavTrap &assign);
 
