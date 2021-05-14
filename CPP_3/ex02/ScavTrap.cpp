@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(const std::string &name1) : ClapTrap(name1, 100, 50, 20, 15, 
 	this->measureIndividuality = 5;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy){
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
 	operator=(copy);
 }
 

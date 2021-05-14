@@ -19,7 +19,7 @@
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name, 100, 100, 30, 20, 5, 25, 1){
 }
 
-FragTrap::FragTrap(const FragTrap &copy){
+FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy) {
 	operator=(copy);
 }
 
