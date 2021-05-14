@@ -20,12 +20,13 @@
 
 class ClapTrap{
 protected:
-	int _maxHitPoints = 100;
-	int _maxEnergyPoints = 100;
-	int _meleeAttackDamage = 30;
-	int _rangeAttackDamage = 20;
-	int _armorDamageReduction = 5;
-	int _valueEnergyLoss = 25;
+	int maxHitPoints;
+	int maxEnergyPoints;
+	int meleeAttackDamage;
+	int rangeAttackDamage;
+	int armorDamageReduction;
+	int valueEnergyLoss;
+
 public:
 	ClapTrap(const std::string &name);
 
