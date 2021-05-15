@@ -17,7 +17,17 @@
 
 
 NinjaTrap::NinjaTrap(){
-
+//	this->maxHitPoints = 60;
+	this->maxEnergyPoints = 120;
+	this->meleeAttackDamage = 60;
+//	this->rangeAttackDamage = 5;
+//	this->armorDamageReduction = 0;
+//	this->valueEnergyLoss = 40;
+	this->startLevel = 1;
+	this->name = "No name";
+//	this->hitPoints = maxHitPoints;
+	this->energyPoints = maxEnergyPoints;
+	this->level = startLevel;
 }
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name, 60, 120, 60, 5, 0, 40, 1){

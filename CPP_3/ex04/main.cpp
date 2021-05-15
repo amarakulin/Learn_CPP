@@ -1,4 +1,5 @@
 /* **************************************************************************** */
+/* **************************************************************************** */
 /*                                                                      .       */
 /*   main.cpp.c                                                        / V\     */
 /*                                                                   / `  /     */
@@ -48,6 +49,7 @@ int main(){
 	NinjaTrap Ninja("Ninja First");
 	NinjaTrap CopyNinja (Ninja);
 	NinjaTrap Ninja2("Ninja Second");
+	std::cout << "SUPPPPEEREPREPRER" << std::endl;
 	SuperTrap Super1("Super1");
 	SuperTrap Super2("Super2");
 	std::cout << RESET << std::endl;

@@ -46,6 +46,20 @@ public:
 	int energyPoints;
 	int level;
 
+	int getMaxHitPoints() const;
+
+	int getMaxEnergyPoints() const;
+
+	int getMeleeAttackDamage() const;
+
+	int getRangeAttackDamage() const;
+
+	int getArmorDamageReduction() const;
+
+	int getValueEnergyLoss() const;
+
+	int getStartLevel() const;
+
 	virtual void rangeAttack(std::string const &target);
 	virtual void meleeAttack(std::string const &target);
 	virtual void takeDamage(unsigned int amount);

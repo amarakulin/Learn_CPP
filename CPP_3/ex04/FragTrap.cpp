@@ -17,7 +17,17 @@
 #include "ClapTrap.hpp"
 
 FragTrap::FragTrap(){
-
+	this->maxHitPoints = 100;
+//	this->maxEnergyPoints = 100;
+//	this->meleeAttackDamage = 30;
+	this->rangeAttackDamage = 20;
+	this->armorDamageReduction = 5;
+//	this->valueEnergyLoss = 25;
+	this->startLevel = 1;
+	this->name = "No name";
+	this->hitPoints = maxHitPoints;
+//	this->energyPoints = maxEnergyPoints;
+	this->level = startLevel;
 }
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name, 100, 100, 30, 20, 5, 25, 1){

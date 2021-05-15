@@ -18,10 +18,23 @@
 SuperTrap::SuperTrap(){
 
 }
-//100, 100, 30, 20, 5, 25, 1
-//60, 120, 60, 5, 0, 40, 1
-SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name, 100, 120, 60, 20, 5, 40, 1){
-
+SuperTrap::SuperTrap(const std::string &name) : FragTrap(), NinjaTrap() {
+	this->maxHitPoints = FragTrap::getMaxHitPoints();
+	this->maxEnergyPoints = NinjaTrap::getMaxEnergyPoints();
+	this->meleeAttackDamage = NinjaTrap::getMeleeAttackDamage();
+	this->rangeAttackDamage = FragTrap::getRangeAttackDamage();
+	this->armorDamageReduction = FragTrap::getArmorDamageReduction();
+	this->valueEnergyLoss = NinjaTrap::getValueEnergyLoss();
+	this->startLevel = 1;
+	this->name = name;
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = NinjaTrap::energyPoints;
+	this->level = startLevel;
+	std::cout << "SuperTRAP with ARGS" << std::endl;
+	std::cout << "Create ROBOT with name " << name
+			  << " with " << hitPoints
+			  << " hits and " << energyPoints
+			  << " energy points!" << std::endl;
 }
 
 

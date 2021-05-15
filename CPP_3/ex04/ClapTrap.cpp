@@ -113,3 +113,38 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &assign){
 	}
 	return *this;
 }
+
+int ClapTrap::getMaxHitPoints() const
+{
+	return maxHitPoints;
+}
+
+int ClapTrap::getMaxEnergyPoints() const
+{
+	return maxEnergyPoints;
+}
+
+int ClapTrap::getMeleeAttackDamage() const
+{
+	return meleeAttackDamage;
+}
+
+int ClapTrap::getRangeAttackDamage() const
+{
+	return rangeAttackDamage;
+}
+
+int ClapTrap::getArmorDamageReduction() const
+{
+	return armorDamageReduction;
+}
+
+int ClapTrap::getValueEnergyLoss() const
+{
+	return valueEnergyLoss;
+}
+
+int ClapTrap::getStartLevel() const
+{
+	return startLevel;
+}
