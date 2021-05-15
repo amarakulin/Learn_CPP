@@ -18,8 +18,27 @@
 #include "ClapTrap.hpp"
 #include "SuperTrap.hpp"
 
+#define RESET   "\033[0m"
+#define BLACK   "\033[30m"      /* Black */
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"      /* Green */
+#define YELLOW  "\033[33m"      /* Yellow */
+#define BLUE    "\033[34m"      /* Blue */
+#define MAGENTA "\033[35m"      /* Magenta */
+#define CYAN    "\033[36m"      /* Cyan */
+#define WHITE   "\033[37m"      /* White */
+#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
+#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
+#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
+#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
 int main(){
-	ClapTrap WeakRobot("WeakRobot");
+	std::cout << BOLDCYAN << std::endl;
+	ClapTrap WeakRobot("WeakRobot", 2, 4, 5, 6, 0, 2, 2);
 	FragTrap Rick("Rick");
 	FragTrap CopyRick (Rick);
 	FragTrap Nick("Nick");
@@ -29,18 +48,19 @@ int main(){
 	NinjaTrap Ninja("Ninja First");
 	NinjaTrap CopyNinja (Ninja);
 	NinjaTrap Ninja2("Ninja Second");
-	std::cout << "=========SUPER=========" << std::endl;
-	SuperTrap Super("Super First");
-//	SuperTrap CopySuper (Super);
-	SuperTrap Super2("Super Second");
+	SuperTrap Super1("Super1");
+	SuperTrap Super2("Super2");
+	std::cout << RESET << std::endl;
+
 
 	std::srand(std::time(NULL));
+	std::cout << BOLDMAGENTA "++++++++++ClapTrap+++++++++++++" << std::endl;
 	WeakRobot.rangeAttack("candy");
 	WeakRobot.meleeAttack("pankakes");
 	WeakRobot.takeDamage(1);
 	WeakRobot.beRepaired(20);
-
-	std::cout << "+++++++++++FragTrap+++++++++++++" << std::endl;
+	std::cout << RESET << std::endl;
+	std::cout << BOLDGREEN "+++++++++++FragTrap+++++++++++++" << std::endl;
 	Rick.meleeAttack(" something");
 	Rick.rangeAttack(" a box");
 	Rick.takeDamage(50);
@@ -56,8 +76,8 @@ int main(){
 	Nick.vaulthunter_dot_exe("Niks target");
 	Nick.takeDamage(90);
 	CopyRick.takeDamage(90);
-
-	std::cout << "+++++++++++ScavTrap+++++++++++++" << std::endl;
+	std::cout << RESET << std::endl;
+	std::cout << BOLDYELLOW "+++++++++++ScavTrap+++++++++++++" << std::endl;
 	Nate.meleeAttack("something");
 	Nate.rangeAttack("a box");
 	Nate.takeDamage(50);
@@ -74,8 +94,8 @@ int main(){
 	Fred.challengeNewcomer();
 	Fred.takeDamage(90);
 	CopyNate.takeDamage(90);
-
-	std::cout << "+++++++++NINJA+++++++++++++++" << std::endl;
+	std::cout << RESET << std::endl;
+	std::cout << BOLDBLUE "+++++++++NINJA+++++++++++++++" << std::endl;
 	Ninja.meleeAttack(" something");
 	Ninja.rangeAttack(" a box");
 	Ninja.takeDamage(50);
@@ -90,13 +110,9 @@ int main(){
 	Ninja2.ninjaShoebox(Fred);
 	Ninja2.takeDamage(90);
 	CopyNinja.takeDamage(90);
-
-	std::cout << "+++++++++SuperTrap+++++++++++++++" << std::endl;
-	Super.meleeAttack(" something");
-	Super.rangeAttack(" a box");
-	Super2 = Super;
-	Super2.meleeAttack(" something Second");
-	Super2.rangeAttack(" a box Second");
-
+	std::cout << RESET << std::endl;
+	
+	
+	std::cout << RED "+++++++++++++Destructors+++++++++++++" << std::endl;
 	return (0);
 }

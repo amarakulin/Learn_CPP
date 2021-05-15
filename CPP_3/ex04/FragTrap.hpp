@@ -29,9 +29,6 @@ public:
 	void vaulthunter_dot_exe(std::string const & target);
 	FragTrap &operator=(const FragTrap &assign);
 
-	enum bestSettings{
-		BEST_SETTINGS
-	};
 };
 
 

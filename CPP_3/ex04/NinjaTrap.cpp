@@ -20,22 +20,8 @@ NinjaTrap::NinjaTrap(){
 
 }
 
-NinjaTrap::NinjaTrap(std::string name) : ClapTrap() {
-	this->maxHitPoints = 60;
-	this->maxEnergyPoints = 120;
-	this->meleeAttackDamage = 60;
-	this->rangeAttackDamage = 50;
-	this->armorDamageReduction = 0;
-	this->valueEnergyLoss = 40;
-	this->startLevel = 1;
-	this->name = name;
-	this->hitPoints = maxHitPoints;
-	this->energyPoints = maxEnergyPoints;
-	this->level = startLevel;
-	std::cout << "Create ROBOT with name " << name
-			  << " with " << hitPoints
-			  << " hits and " << energyPoints
-			  << " energy points!" << std::endl;
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name, 60, 120, 60, 5, 0, 40, 1){
+
 }
 
 NinjaTrap::~NinjaTrap(){
@@ -53,13 +39,6 @@ NinjaTrap::NinjaTrap(const NinjaTrap &copy) : ClapTrap(copy){
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &assign){
 	if (this == &assign){
-		this->maxHitPoints = assign.maxHitPoints;
-		this->maxEnergyPoints = assign.maxEnergyPoints;
-		this->meleeAttackDamage = assign.meleeAttackDamage;
-		this->rangeAttackDamage = assign.rangeAttackDamage;
-		this->armorDamageReduction = assign.armorDamageReduction;
-		this->valueEnergyLoss = assign.valueEnergyLoss;
-		this->startLevel = assign.startLevel;
 		this->hitPoints = assign.hitPoints;
 		this->name = assign.name;
 		this->energyPoints = assign.energyPoints;

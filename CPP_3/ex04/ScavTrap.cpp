@@ -19,23 +19,9 @@
 ScavTrap::ScavTrap(){
 
 }
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(){
-	this->maxHitPoints = 100;
-	this->maxEnergyPoints = 50;
-	this->meleeAttackDamage = 20;
-	this->rangeAttackDamage = 15;
-	this->armorDamageReduction = 3;
-	this->valueEnergyLoss = 40;
-	this->startLevel = 1;
-	this->name = name;
-	this->hitPoints = maxHitPoints;
-	this->energyPoints = maxEnergyPoints;
-	this->level = startLevel;
+
+ScavTrap::ScavTrap(const std::string &name1) : ClapTrap(name1, 100, 50, 20, 15, 3, 40, 1){
 	this->measureIndividuality = 5;
-	std::cout << "Create ROBOT with name " << name
-			  << " with " << hitPoints
-			  << " hits and " << energyPoints
-			  << " energy points!" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) {
@@ -70,13 +56,6 @@ void ScavTrap::challengeNewcomer(){
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &assign){
 	if (this != &assign){
-		this->maxHitPoints = assign.maxHitPoints;
-		this->maxEnergyPoints = assign.maxEnergyPoints;
-		this->meleeAttackDamage = assign.meleeAttackDamage;
-		this->rangeAttackDamage = assign.rangeAttackDamage;
-		this->armorDamageReduction = assign.armorDamageReduction;
-		this->valueEnergyLoss = assign.valueEnergyLoss;
-		this->startLevel = assign.startLevel;
 		this->hitPoints = assign.hitPoints;
 		this->name = assign.name;
 		this->energyPoints = assign.energyPoints;

@@ -20,22 +20,7 @@ FragTrap::FragTrap(){
 
 }
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(){
-	this->maxHitPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->meleeAttackDamage = 30;
-	this->rangeAttackDamage = 20;
-	this->armorDamageReduction = 5;
-	this->valueEnergyLoss = 25;
-	this->startLevel = 1;
-	this->name = name;
-	this->hitPoints = maxHitPoints;
-	this->energyPoints = maxEnergyPoints;
-	this->level = startLevel;
-	std::cout << "Create ROBOT with name " << name
-			  << " with " << hitPoints
-			  << " hits and " << energyPoints
-			  << " energy points!" << std::endl;
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name, 100, 100, 30, 20, 5, 25, 1){
 }
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy) {
@@ -70,13 +55,6 @@ void FragTrap::vaulthunter_dot_exe(const std::string &target){
 
 FragTrap &FragTrap::operator=(const FragTrap &assign){
 	if (this != &assign) {
-		this->maxHitPoints = assign.maxHitPoints;
-		this->maxEnergyPoints = assign.maxEnergyPoints;
-		this->meleeAttackDamage = assign.meleeAttackDamage;
-		this->rangeAttackDamage = assign.rangeAttackDamage;
-		this->armorDamageReduction = assign.armorDamageReduction;
-		this->valueEnergyLoss = assign.valueEnergyLoss;
-		this->startLevel = assign.startLevel;
 		this->hitPoints = assign.hitPoints;
 		this->name = assign.name;
 		this->energyPoints = assign.energyPoints;
@@ -84,4 +62,3 @@ FragTrap &FragTrap::operator=(const FragTrap &assign){
 	}
 	return (*this);
 }
-

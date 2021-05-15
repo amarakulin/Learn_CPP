@@ -14,24 +14,31 @@
 
 
 #include "ClapTrap.hpp"
+
 ClapTrap::ClapTrap(){
-	std::cout << "Empty CLAPTRAP" << std::endl;
+	std::cout << "ClapTRAP without ARGS" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) {
-	this->maxHitPoints = 100;
-	this->maxEnergyPoints = 100;
-	this->meleeAttackDamage = 30;
-	this->rangeAttackDamage = 20;
-	this->armorDamageReduction = 5;
-	this->valueEnergyLoss = 25;
-	this->startLevel = 1;
+ClapTrap::ClapTrap(const std::string &name,
+					int maxHitPoints,
+					int maxEnergyPoints,
+					int meleeAttackDamage,
+					int rangeAttackDamage,
+					int armorDamageReduction,
+					int valueEnergyLoss,
+					int startLevel){
+	this->maxHitPoints = maxHitPoints;
+	this->maxEnergyPoints = maxEnergyPoints;
+	this->meleeAttackDamage = meleeAttackDamage;
+	this->rangeAttackDamage = rangeAttackDamage;
+	this->armorDamageReduction = armorDamageReduction;
+	this->valueEnergyLoss = valueEnergyLoss;
+	this->startLevel = startLevel;
 	this->name = name;
 	this->hitPoints = maxHitPoints;
 	this->energyPoints = maxEnergyPoints;
 	this->level = startLevel;
-	std::cout << "FULL CLAPTRAP" << std::endl;
-
+	std::cout << "ClapTRAP with ARGS" << std::endl;
 	std::cout << "Create ROBOT with name " << name
 			  << " with " << hitPoints
 			  << " hits and " << energyPoints
@@ -44,13 +51,19 @@ ClapTrap::ClapTrap(const ClapTrap &copy){
 }
 
 ClapTrap::~ClapTrap(){
+	std::cout << "ClapTrap " << name
+			  << " with level " << level
+			  << ". Left " << hitPoints
+			  << " hits and " << energyPoints
+			  << " energy points!"
+			  << " He has been distructed" << std::endl;
 }
 
 void ClapTrap::rangeAttack(const std::string &target){
 	this->level += 1;
 	std::cout << this->name
 			  << " range attacks " << target
-			  << " at range, causing " << this->rangeAttackDamage
+			  << "at range, causing " << this->rangeAttackDamage
 			  << " points of damage!"
 			  << " Level up !" << std::endl;
 	std::cout << "Level: " << this->level << std::endl;
@@ -59,7 +72,7 @@ void ClapTrap::rangeAttack(const std::string &target){
 void ClapTrap::meleeAttack(const std::string &target){
 	std::cout << this->name
 			  << " attacks " << target
-			  << " at melee, causing " << this->meleeAttackDamage
+			  << "at melee, causing " << this->meleeAttackDamage
 			  << " points of damage!" << std::endl;
 }
 
@@ -93,13 +106,6 @@ void ClapTrap::beRepaired(unsigned int amount){
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &assign){
 	if (this != &assign){
-		this->maxHitPoints = assign.maxHitPoints;
-		this->maxEnergyPoints = assign.maxEnergyPoints;
-		this->meleeAttackDamage = assign.meleeAttackDamage;
-		this->rangeAttackDamage = assign.rangeAttackDamage;
-		this->armorDamageReduction = assign.armorDamageReduction;
-		this->valueEnergyLoss = assign.valueEnergyLoss;
-		this->startLevel = assign.startLevel;
 		this->hitPoints = assign.hitPoints;
 		this->name = assign.name;
 		this->energyPoints = assign.energyPoints;

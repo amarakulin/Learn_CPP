@@ -16,6 +16,7 @@
 #ifndef CPP_3_SUPERTRAP_HPP
 #define CPP_3_SUPERTRAP_HPP
 
+#include "iostream"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
