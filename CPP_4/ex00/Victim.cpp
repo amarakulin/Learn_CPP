@@ -64,9 +64,3 @@ const std::string &Victim::getName() const{
 void Victim::setName(const std::string &name){
 	_name = name;
 }
-
-void Victim::getPolymorphed() const{
-	std::cout << BOLDBLUE << Victim::getName() +
-				" has been turned into a cute little sheep!"
-				RESET << std::endl;
-}

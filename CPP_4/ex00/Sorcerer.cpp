@@ -74,3 +74,9 @@ const std::string &Sorcerer::getTitle() const{
 void Sorcerer::setTitle(const std::string &title){
 	_title = title;
 }
+
+void Sorcerer::polymorph(const Victim &v) const{
+	std::cout << BOLDBLUE + this->getName() +
+				" has been turned into a pink pony!"
+				RESET << std::endl;
+}

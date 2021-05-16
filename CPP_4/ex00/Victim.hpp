@@ -28,7 +28,6 @@ public:
 
 	const std::string &getName() const;
 	void setName(const std::string &name);
-	void getPolymorphed() const;
 
 private:
 	std::string _name;

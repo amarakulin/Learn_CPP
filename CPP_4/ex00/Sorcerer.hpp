@@ -17,6 +17,7 @@
 #define CPP_4_SORCERER_HPP
 
 #include <iostream>
+#include "Victim.hpp"
 
 class Sorcerer{
 public:
@@ -30,6 +31,7 @@ public:
 	const std::string &getTitle() const;
 	void setName(const std::string &name);
 	void setTitle(const std::string &title);
+	void polymorph(Victim const &) const;
 
 private:
 	std::string _name;

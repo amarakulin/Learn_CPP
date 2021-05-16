@@ -14,3 +14,33 @@
 
 
 #include "Peon.hpp"
+
+Peon::Peon(){
+	setParamConstructor("No name");
+}
+
+Peon::Peon(std::string name) : Victim(name){
+	setParamConstructor(name);
+}
+
+Peon::Peon(const Peon &copy){
+	operator=(copy);
+}
+
+Peon::~Peon(){
+	std::cout << "Bleuark..." << std::endl;
+}
+
+Peon &Peon::operator=(const Peon &assign){
+	if (this != &assign){
+		this->setName(assign.getName());
+	}
+	return *this;;
+}
+
+void Peon::setParamConstructor(std::string name){
+	std::cout << "Zog zog." << std::endl;
+	setName(name);
+}
+
+

@@ -16,11 +16,19 @@
 #ifndef CPP_4_PEON_HPP
 #define CPP_4_PEON_HPP
 
+#include "Victim.hpp"
 
-class Peon
-{
+class Peon : virtual public Victim{
+public:
+	Peon();
+	Peon(std::string name);
+	Peon(Peon const &copy);
+	Peon& operator=(const Peon &assign);
+	~Peon();
+
+private:
+	void setParamConstructor(std::string name);
 
 };
 
-
-#endif //CPP_4_PEON_HPP
+#endif
