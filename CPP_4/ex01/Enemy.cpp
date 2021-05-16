@@ -14,7 +14,6 @@
 
 
 #include "Enemy.hpp"
-#include "Colors.hpp"
 
 Enemy::Enemy(){
 	setParamConstructor(0, "No type");
@@ -69,4 +68,7 @@ void Enemy::takeDamage(int damage){
 			this->_hp = 0;
 		}
 	}
+	std::cout << BOLDGREEN "Enemy got " << damage << " damage"
+				". Now he has " << this->_hp << " HP."
+			RESET << std::endl;
 }
