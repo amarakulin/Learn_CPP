@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   AWeapon.hpp                                                        / V\     */
+/*   Colors.hpp                                                        / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,33 +13,25 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_4_AWEAPON_HPP
-#define CPP_4_AWEAPON_HPP
+#ifndef CPP_4_COLORS_HPP
+#define CPP_4_COLORS_HPP
 
-#include "iostream"
-#include "Colors.hpp"
-
-class AWeapon{
-public:
-	AWeapon();
-	AWeapon(std::string const &name, int apcost, int damage);
-	AWeapon(AWeapon const &copy);
-	AWeapon& operator=(const AWeapon &assign);
-	virtual ~AWeapon();
-	
-	virtual void attack() const = 0;
-	void setName(const std::string &name);
-	void setApcost(int apcost);
-	void setDamage(int damage);
-	const std::string &getName() const;
-	int getApcost() const;
-	int getDamage() const;
-
-private:
-	std::string name;
-	int apcost;
-	int damage;
-};
-
+#define RESET   "\033[0m"
+#define BLACK   "\033[30m"      /* Black */
+#define RED     "\033[31m"      /* Red */
+#define GREEN   "\033[32m"      /* Green */
+#define YELLOW  "\033[33m"      /* Yellow */
+#define BLUE    "\033[34m"      /* Blue */
+#define MAGENTA "\033[35m"      /* Magenta */
+#define CYAN    "\033[36m"      /* Cyan */
+#define WHITE   "\033[37m"      /* White */
+#define BOLDBLACK   "\033[1m\033[30m"      /* Bold Black */
+#define BOLDRED     "\033[1m\033[31m"      /* Bold Red */
+#define BOLDGREEN   "\033[1m\033[32m"      /* Bold Green */
+#define BOLDYELLOW  "\033[1m\033[33m"      /* Bold Yellow */
+#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
+#define BOLDMAGENTA "\033[1m\033[35m"      /* Bold Magenta */
+#define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
+#define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 #endif
