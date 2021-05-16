@@ -16,11 +16,17 @@
 #ifndef CPP_4_RADSCORPION_HPP
 #define CPP_4_RADSCORPION_HPP
 
+#include "Enemy.hpp"
 
-class RadScorpion
-{
+class RadScorpion : virtual public Enemy{
+public:
+	RadScorpion();
+	RadScorpion(RadScorpion const &copy);
+	RadScorpion& operator=(const RadScorpion &assign);
+	~RadScorpion();
+	void takeDamage(int damage);
 
 };
 
 
-#endif //CPP_4_RADSCORPION_HPP
+#endif
