@@ -14,6 +14,7 @@
 
 
 #include "Peon.hpp"
+#include "Colors.hpp"
 
 Peon::Peon(){
 	setParamConstructor("No name");
@@ -28,7 +29,7 @@ Peon::Peon(const Peon &copy){
 }
 
 Peon::~Peon(){
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << BOLDRED "Bleuark..." << RESET << std::endl;
 }
 
 Peon &Peon::operator=(const Peon &assign){
@@ -39,7 +40,7 @@ Peon &Peon::operator=(const Peon &assign){
 }
 
 void Peon::setParamConstructor(std::string name){
-	std::cout << "Zog zog." << std::endl;
+	std::cout << BOLDBLUE "Zog zog." << RESET << std::endl;
 	setName(name);
 }
 

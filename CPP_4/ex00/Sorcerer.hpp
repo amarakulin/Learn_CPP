@@ -31,7 +31,7 @@ public:
 	const std::string &getTitle() const;
 	void setName(const std::string &name);
 	void setTitle(const std::string &title);
-	void polymorph(Victim const &) const;
+	void polymorph(Victim const &victim) const;
 
 private:
 	std::string _name;
