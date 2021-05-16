@@ -16,11 +16,16 @@
 #ifndef CPP_4_PLASMARIFLE_HPP
 #define CPP_4_PLASMARIFLE_HPP
 
+#include "AWeapon.hpp"
 
-class PlasmaRifle
-{
-
+class PlasmaRifle : virtual public AWeapon{
+public:
+	PlasmaRifle();
+	PlasmaRifle(PlasmaRifle const &copy);
+	PlasmaRifle& operator=(const PlasmaRifle &assign);
+	~PlasmaRifle();
+	void attack();
 };
 
 
-#endif //CPP_4_PLASMARIFLE_HPP
+#endif
