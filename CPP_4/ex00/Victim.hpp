@@ -16,11 +16,25 @@
 #ifndef CPP_4_VICTIM_HPP
 #define CPP_4_VICTIM_HPP
 
+#include <iostream>
 
-class Victim
-{
+class Victim{
+public:
+	Victim();
+	Victim(std::string name);
+	Victim(Victim const &copy);
+	Victim& operator=(const Victim &assign);
+	~Victim();
 
+	const std::string &getName() const;
+	void setName(const std::string &name);
+	void getPolymorphed() const;
+
+private:
+	std::string _name;
+	void setParamConstructor(std::string name);
 };
 
+std::ostream &operator<<(std::ostream &out, const Victim &victim);
 
-#endif //CPP_4_VICTIM_HPP
+#endif

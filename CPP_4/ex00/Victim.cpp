@@ -14,3 +14,59 @@
 
 
 #include "Victim.hpp"
+#include "Colors.hpp"
+
+Victim::Victim(){
+	setParamConstructor("No name");
+
+}
+
+Victim::Victim(std::string name){
+	setParamConstructor(name);
+}
+
+Victim::~Victim(){
+	std::cout << BOLDRED << "Victim " + this->_name +
+				 + " just died for no apparent reason!"
+				 + RESET << std::endl;
+}
+
+Victim &Victim::operator=(const Victim &assign){
+	if (this != &assign){
+		this->_name = assign.getName();
+	}
+	return *this;
+}
+
+
+Victim::Victim(const Victim &copy){
+	operator=(copy);
+}
+
+std::ostream &operator<<(std::ostream &out, const Victim &victim){
+	out << BOLDGREEN << "I'm " + victim.getName()
+						+ " and I like otters!"
+						RESET << std::endl;
+	return out;
+}
+
+void Victim::setParamConstructor(std::string name){
+	this->_name = name;
+	std::cout << BOLDBLUE << "Some random victim called "
+				+ this->_name + ", " +
+				" just appeared!" RESET << std::endl;
+}
+
+const std::string &Victim::getName() const{
+	return _name;
+}
+
+void Victim::setName(const std::string &name){
+	_name = name;
+}
+
+void Victim::getPolymorphed() const{
+	std::cout << BOLDBLUE << Victim::getName() +
+				" has been turned into a cute little sheep!"
+				RESET << std::endl;
+}
