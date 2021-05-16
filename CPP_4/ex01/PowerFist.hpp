@@ -16,11 +16,15 @@
 #ifndef CPP_4_POWERFIST_HPP
 #define CPP_4_POWERFIST_HPP
 
+#include "AWeapon.hpp"
 
-class PowerFist
-{
-
+class PowerFist : virtual public AWeapon{
+public:
+	PowerFist();
+	PowerFist(PowerFist const &copy);
+	PowerFist& operator=(const PowerFist &assign);
+	~PowerFist();
+	void attack();
 };
 
-
-#endif //CPP_4_POWERFIST_HPP
+#endif
