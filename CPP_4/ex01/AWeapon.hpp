@@ -36,9 +36,9 @@ public:
 	int getDamage() const;
 
 private:
-	std::string name;
-	int apcost;
-	int damage;
+	std::string _name;
+	int _apcost;
+	int _damage;
 };
 
 

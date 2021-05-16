@@ -16,7 +16,7 @@
 #include "AWeapon.hpp"
 
 AWeapon::AWeapon(){
-	setName("No name");
+	setName("No _name");
 	setApcost(0);
 	setDamage(0);
 }
@@ -33,9 +33,9 @@ AWeapon::AWeapon(const AWeapon &copy){
 
 AWeapon &AWeapon::operator=(const AWeapon &assign){
 	if (this != &assign){
-		this->name = assign.getName();
-		this->apcost = assign.getApcost();
-		this->damage = assign.getDamage();
+		this->_name = assign.getName();
+		this->_apcost = assign.getApcost();
+		this->_damage = assign.getDamage();
 	}
 	return *this;
 }
@@ -43,25 +43,25 @@ AWeapon &AWeapon::operator=(const AWeapon &assign){
 AWeapon::~AWeapon(){}
 
 const std::string &AWeapon::getName() const{
-	return name;
+	return _name;
 }
 
 void AWeapon::setName(const std::string &name){
-	AWeapon::name = name;
+	AWeapon::_name = name;
 }
 
 int AWeapon::getApcost() const{
-	return apcost;
+	return _apcost;
 }
 
 void AWeapon::setApcost(int apcost){
-	AWeapon::apcost = apcost;
+	AWeapon::_apcost = apcost;
 }
 
 int AWeapon::getDamage() const{
-	return damage;
+	return _damage;
 }
 
 void AWeapon::setDamage(int damage){
-	AWeapon::damage = damage;
+	AWeapon::_damage = damage;
 }
