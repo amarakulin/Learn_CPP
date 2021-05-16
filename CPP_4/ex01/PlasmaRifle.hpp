@@ -24,7 +24,7 @@ public:
 	PlasmaRifle(PlasmaRifle const &copy);
 	PlasmaRifle& operator=(const PlasmaRifle &assign);
 	~PlasmaRifle();
-	void attack();
+	virtual void attack() const;
 };
 
 

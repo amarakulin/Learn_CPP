@@ -24,8 +24,7 @@ public:
 	RadScorpion(RadScorpion const &copy);
 	RadScorpion& operator=(const RadScorpion &assign);
 	~RadScorpion();
-	void takeDamage(int damage);
-
+//	void takeDamage(int damage);
 };
 
 

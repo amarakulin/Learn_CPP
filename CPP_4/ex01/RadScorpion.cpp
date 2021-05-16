@@ -33,3 +33,4 @@ RadScorpion &RadScorpion::operator=(const RadScorpion &assign){
 RadScorpion::~RadScorpion(){
 	std::cout << BOLDRED "* SPROTCH *" RESET << std::endl;
 }
+

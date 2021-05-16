@@ -39,6 +39,22 @@ Character &Character::operator=(const Character &assign){
 	return *this;
 }
 
+std::ostream &operator<<(std::ostream &out, const Character &character){
+	std::string nameWeapon;
+	if (character.getWeapon() == nullptr){
+		nameWeapon = "unarmed";
+	}
+	else{
+		nameWeapon = character.getWeapon()->getName();
+	}
+	out << BOLDGREEN << character.getName() + " has "
+						<< character.getActionPoints()
+						<< " AP and wields a "
+						<< nameWeapon +
+						RESET << std::endl;
+	return out;
+}
+
 Character::~Character(){
 
 }
@@ -75,7 +91,7 @@ void Character::recoverAP(){
 }
 
 void Character::attack(Enemy *enemy){
-	if (this->_weapon != nullptr){
+	if (this->_weapon == nullptr){
 		std::cout << BOLDGREEN << this->_name << " has " <<
 				  this->_actionPoints << " AP and is unarmed" <<
 				  RESET << std::endl;
@@ -83,6 +99,7 @@ void Character::attack(Enemy *enemy){
 	}
 	if (this->_weapon->getApcost() <= this->_actionPoints){
 		enemy->takeDamage(this->_weapon->getDamage());
+		this->_weapon->attack();
 		this->_actionPoints -= this->_weapon->getApcost();
 		std::cout << BOLDGREEN << this->_name <<
 				  " attacks " << enemy->getType() <<

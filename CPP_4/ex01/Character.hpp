@@ -42,8 +42,9 @@ private:
 	std::string _name;
 	int _actionPoints;
 	AWeapon *_weapon;
-	const int _apToRecover = 10;
+	static const int _apToRecover = 10;
 };
 
+std::ostream &operator<<(std::ostream &out, const Character &character);
 
 #endif

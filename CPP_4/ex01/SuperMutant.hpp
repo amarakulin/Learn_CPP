@@ -27,7 +27,7 @@ public:
 	void takeDamage(int damage);
 
 private:
-	const int valueArmor = 3;
+	static const int valueArmor = 3;
 };
 
 

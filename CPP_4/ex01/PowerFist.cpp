@@ -33,6 +33,6 @@ PowerFist::~PowerFist(){
 
 }
 
-void PowerFist::attack(){
+void PowerFist::attack() const{
 	std::cout << BOLDGREEN "* pschhh... SBAM! *" RESET << std::endl;
 }

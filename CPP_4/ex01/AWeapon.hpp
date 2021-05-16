@@ -26,7 +26,7 @@ public:
 	AWeapon(AWeapon const &copy);
 	AWeapon& operator=(const AWeapon &assign);
 	virtual ~AWeapon();
-	
+
 	virtual void attack() const = 0;
 	void setName(const std::string &name);
 	void setApcost(int apcost);

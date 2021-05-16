@@ -33,6 +33,6 @@ PlasmaRifle::~PlasmaRifle(){
 
 }
 
-void PlasmaRifle::attack(){
+void PlasmaRifle::attack() const{
 	std::cout << BOLDGREEN "* piouuu piouuu piouuu *" RESET << std::endl;
 }

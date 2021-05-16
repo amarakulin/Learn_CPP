@@ -16,7 +16,7 @@
 #include "AWeapon.hpp"
 
 AWeapon::AWeapon(){
-	setName("No _name");
+	setName("No name");
 	setApcost(0);
 	setDamage(0);
 }
