@@ -16,11 +16,19 @@
 #ifndef CPP_4_SUPERMUTANT_HPP
 #define CPP_4_SUPERMUTANT_HPP
 
+#include "Enemy.hpp"
 
-class SuperMutant
-{
+class SuperMutant : virtual public Enemy{
+public:
+	SuperMutant();
+	SuperMutant(SuperMutant const &copy);
+	SuperMutant& operator=(const SuperMutant &assign);
+	~SuperMutant();
+	void takeDamage(int damage);
 
+private:
+	const int valueArmor = 3;
 };
 
 
-#endif //CPP_4_SUPERMUTANT_HPP
+#endif
