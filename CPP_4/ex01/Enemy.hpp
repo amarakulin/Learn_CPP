@@ -17,6 +17,7 @@
 #define CPP_4_ENEMY_HPP
 
 #include "iostream"
+#include "Colors.hpp"
 
 class Enemy{
 public:
