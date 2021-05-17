@@ -15,7 +15,7 @@
 
 #include "Character.hpp"
 
-Character::Character(){
+Character::Character() : ICharacter(){
 	this->_name = "No name";
 	for (int i = 0; i < 4; i++){
 		this->_materials[i] = nullptr;
@@ -37,6 +37,7 @@ Character::Character(const Character &copy){
 Character &Character::operator=(const Character &assign){
 	if (this != &assign){
 		deleteCharacters();
+		this->_name = assign._name;
 		for(int i = 0; i < 4; i++){
 			this->_materials[i] = assign._materials[i];
 		}
