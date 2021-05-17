@@ -16,11 +16,20 @@
 #ifndef CPP_4_ASSAULTTERMINATOR_HPP
 #define CPP_4_ASSAULTTERMINATOR_HPP
 
+#include <iostream>
+#include "ISpaceMarine.hpp"
 
-class AssaultTerminator
-{
+class AssaultTerminator : virtual public ISpaceMarine{
+public:
+	AssaultTerminator();
+	AssaultTerminator(AssaultTerminator const &copy);
+	AssaultTerminator& operator=(const AssaultTerminator &assign);
+	~AssaultTerminator();
 
+	void battleCry() const;
+	void rangedAttack() const;
+	void meleeAttack() const;
 };
 
 
-#endif //CPP_4_ASSAULTTERMINATOR_HPP
+#endif
