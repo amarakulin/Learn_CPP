@@ -56,3 +56,11 @@ void AMateria::use(ICharacter &target){
 
 }
 
+void AMateria::setType(const std::string &type){
+	AMateria::type = type;
+}
+
+void AMateria::setXp(unsigned int xp){
+	_xp = xp;
+}
+
