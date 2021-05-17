@@ -42,3 +42,7 @@ void TacticalMarine::rangedAttack() const{
 void TacticalMarine::meleeAttack() const{
 	std::cout << "* attacks with a chainsword *" << std::endl;
 }
+
+ISpaceMarine *TacticalMarine::clone() const{
+	return (new TacticalMarine(*this));
+}
