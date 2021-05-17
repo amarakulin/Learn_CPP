@@ -36,7 +36,7 @@ Character::Character(const Character &copy){
 
 Character &Character::operator=(const Character &assign){
 	if (this != &assign){
-		deleteCharacters();
+		deleteMaterials();
 		this->_name = assign._name;
 		for(int i = 0; i < 4; i++){
 			this->_materials[i] = assign._materials[i];
@@ -46,7 +46,7 @@ Character &Character::operator=(const Character &assign){
 }
 
 Character::~Character(){
-	deleteCharacters();
+	deleteMaterials();
 }
 
 std::string const &Character::getName() const{
@@ -82,7 +82,7 @@ void Character::use(int idx, ICharacter &target){
 	}
 }
 
-void Character::deleteCharacters(){
+void Character::deleteMaterials(){
 	int i = 0;
 	while(i < 4 && this->_materials[i] != nullptr){
 		delete this->_materials[i];

@@ -35,7 +35,7 @@ public:
 private:
 	std::string _name;
 	AMateria *_materials[4];
-	void deleteCharacters();
+	void deleteMaterials();
 };
 
 
