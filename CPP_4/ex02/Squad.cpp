@@ -17,7 +17,7 @@
 
 Squad::Squad(){
 	std::cout << "Create a Squad" << std::endl;
-
+	this->lstUnits = nullptr;
 }
 
 Squad::Squad(const Squad &copy){
@@ -44,6 +44,7 @@ int Squad::getCount() const{
 		return 0;
 	}
 	while(copy->next != nullptr){
+		copy = copy->next;
 		count++;
 	}
 	count++;
@@ -73,6 +74,10 @@ t_lstUnits *Squad::lstNew(ISpaceMarine *unit){
 
 int Squad::push(ISpaceMarine *newUnit){
 	t_lstUnits *copy = this->lstUnits;
+	if (!this->lstUnits){
+		this->lstUnits = lstNew(newUnit);
+		return 0;
+	}
 	while(copy->next != nullptr){
 		copy = copy->next;
 	}
