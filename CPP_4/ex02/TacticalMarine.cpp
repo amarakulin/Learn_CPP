@@ -24,6 +24,8 @@ TacticalMarine::TacticalMarine(const TacticalMarine &copy){
 }
 
 TacticalMarine &TacticalMarine::operator=(const TacticalMarine &assign){
+	if (this != &assign){
+	}
 	return *this;
 }
 

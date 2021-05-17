@@ -24,6 +24,8 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy){
 }
 
 AssaultTerminator &AssaultTerminator::operator=(const AssaultTerminator &assign){
+	if (this != &assign){
+	}
 	return *this;
 }
 
