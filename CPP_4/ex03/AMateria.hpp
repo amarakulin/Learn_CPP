@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   AMateria.hpp                                                        / V\     */
+/*   AMateria.hpp                                                      / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,11 +13,11 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_4_AMATERIA_HPP
-#define CPP_4_AMATERIA_HPP
+#pragma once
 
-#include "ICharacter.hpp"
 #include <iostream>
+class AMateria;
+#include "ICharacter.hpp"
 
 class AMateria{
 public:
@@ -39,5 +39,3 @@ private:
 	unsigned int _xp;
 };
 
-
-#endif //CPP_4_AMATERIA_HPP
