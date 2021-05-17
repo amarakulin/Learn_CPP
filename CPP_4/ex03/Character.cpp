@@ -23,7 +23,7 @@ Character::Character() : ICharacter(){
 }
 
 
-Character::Character(std::string name){
+Character::Character(std::string name) : ICharacter(){
 	this->_name = name;
 	for (int i = 0; i < 4; i++){
 		this->_materials[i] = nullptr;
