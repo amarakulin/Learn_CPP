@@ -22,6 +22,7 @@ int main()
 {
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
+	ISpaceMarine* cloneTerminator;
 	ISquad* vlc = new Squad;
 	vlc->push(bob);
 	vlc->push(jim);
@@ -32,6 +33,8 @@ int main()
 		cur->rangedAttack();
 		cur->meleeAttack();
 	}
+	cloneTerminator = jim->clone();
 	delete vlc;
+	delete cloneTerminator;
 	return 0;
 }
