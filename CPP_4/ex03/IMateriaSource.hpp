@@ -16,6 +16,8 @@
 #ifndef CPP_4_IMATERIASOURCE_HPP
 #define CPP_4_IMATERIASOURCE_HPP
 
+#include "AMateria.hpp"
+
 class IMateriaSource{
 public:
 	virtual ~IMateriaSource() {}
