@@ -55,7 +55,7 @@ std::string const &Character::getName() const{
 
 void Character::equip(AMateria *m){
 	for (int i = 0; i < 4; i++){
-		if (this->_materials[i] == nullptr){
+		if (this->_materials[i] == nullptr && m != nullptr){
 			this->_materials[i] = m;
 			std::cout << "Equip " << m->getType() << std::endl;
 			return;
