@@ -17,6 +17,7 @@
 #define CPP_5_FORM_HPP
 
 #include <iostream>
+class Form;
 #include "Bureaucrat.hpp"
 
 class Form{
@@ -36,8 +37,8 @@ public:
 	};
 
 	const std::string &getName() const;
-	const int getGradeSign() const;
-	const int getGradeExecute() const;
+	int getGradeSign() const;
+	int getGradeExecute() const;
 	bool isSign() const;
 
 private:

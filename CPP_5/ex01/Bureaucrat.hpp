@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <exception>
+class Bureaucrat;
 #include "Form.hpp"
 
 class Bureaucrat{

@@ -41,8 +41,8 @@ Form::Form(const std::string &name, int gradeSign, int gradeExecute)
 
 Form::Form(const Form &copy)
 		: _name(copy.getName()),
-		  _gradeExecute(copy._gradeExecute),
 		  _gradeSign(copy._gradeSign),
+		  _gradeExecute(copy._gradeExecute),
 		  _sign(copy.isSign())
 {
 	operator=(copy);
@@ -96,11 +96,11 @@ const std::string &Form::getName() const{
 	return _name;
 }
 
-const int Form::getGradeSign() const{
+int Form::getGradeSign() const{
 	return _gradeSign;
 }
 
-const int Form::getGradeExecute() const{
+int Form::getGradeExecute() const{
 	return _gradeExecute;
 }
 
