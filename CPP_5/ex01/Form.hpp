@@ -13,8 +13,7 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_5_FORM_HPP
-#define CPP_5_FORM_HPP
+#pragma once
 
 #include <iostream>
 class Form;
@@ -49,5 +48,3 @@ private:
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &form);
-
-#endif

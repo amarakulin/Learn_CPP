@@ -13,8 +13,7 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_5_BUREAUCRAT_HPP
-#define CPP_5_BUREAUCRAT_HPP
+#pragma once
 
 #include <iostream>
 #include <exception>
@@ -52,5 +51,3 @@ enum gradeEnum{
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
-
-#endif
