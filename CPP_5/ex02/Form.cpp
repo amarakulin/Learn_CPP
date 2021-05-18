@@ -15,6 +15,9 @@
 
 #include "Form.hpp"
 
+/*
+** Abstruct
+*/
 
 Form::Form()
 		: _name("No name"), _gradeSign(1), _gradeExecute(1){
@@ -109,7 +112,7 @@ bool Form::isSign() const{
 }
 
 void Form::execute(const Bureaucrat &executor) const{
-	if (this->isSign() && this->_gradeExecute >= executor.getGrade()){
+	if (this->_gradeExecute >= executor.getGrade()){
 		executor.executeForm(*this);
 	}
 	else{

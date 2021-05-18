@@ -19,13 +19,16 @@
 class Form;
 #include "Bureaucrat.hpp"
 
+/*
+** Abstruct
+*/
 class Form{
 public:
 	Form();
 	Form(const std::string &name, int gradeSign, int gradeExecute);
 	Form(Form const &copy);
 	Form& operator=(const Form &assign);
-	~Form();
+	virtual ~Form();
 
 	void beSigned(Bureaucrat *bureaucrat);
 	class GradeTooHighException : public std::exception{
@@ -39,7 +42,8 @@ public:
 	int getGradeSign() const;
 	int getGradeExecute() const;
 	bool isSign() const;
-	void execute(Bureaucrat const & executor) const;
+
+	virtual void execute(Bureaucrat const & executor) const;
 
 private:
 	const std::string _name;

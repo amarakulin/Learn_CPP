@@ -13,18 +13,33 @@
 /* **************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(){
-	Bureaucrat Rob("Rob", 7);
-	Bureaucrat Fred("Fred", 3);
-	Form form1("Form1", 5, 5);
-	Form form2("Form2", -1, 151);
-	Rob.signForm(&form1);
+	Bureaucrat Rob("Rob", 26);
+	Bureaucrat Fred("Fred", 72);
+	Bureaucrat Nick("Nick", 145);
+	Form *ppf = new PresidentialPardonForm("A");
+	Form *rrf = new RobotomyRequestForm("B");
+	Form *scf = new ShrubberyCreationForm("C");
+	Rob.executeForm(*ppf);
 	Rob.incrementGrage();
-	Rob.incrementGrage();
-	Rob.signForm(&form1);
-	Fred.signForm(&form1);
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
+	Rob.signForm(ppf);
+	Fred.signForm(rrf);
+	Nick.signForm(scf);
+	for (int i = 0; i < 27; i++){
+		Rob.incrementGrage();
+		Nick.incrementGrage();
+		Fred.incrementGrage();
+	}
+	Rob.executeForm(*ppf);
+	Fred.executeForm(*rrf);
+	Nick.executeForm(*scf);
+
+	delete ppf;
+	delete rrf;
+	delete scf;
 	return (0);
 }

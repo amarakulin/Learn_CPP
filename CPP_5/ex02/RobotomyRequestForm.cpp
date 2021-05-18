@@ -28,6 +28,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy){
 
 RobotomyRequestForm &
 RobotomyRequestForm::operator=(const RobotomyRequestForm &assign){
+	(void)assign;
 	return *this;
 }
 
