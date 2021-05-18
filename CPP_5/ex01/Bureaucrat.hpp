@@ -39,10 +39,13 @@ public:
 	};
 
 private:
-	std::string _name;
+	const std::string _name;
 	int _grade;
-	static const int _minGrade = 150;
-	static const int _maxGrade = 1;
+};
+
+enum gradeEnum{
+	MIN_GRADE = 150,
+	MAX_GRADE = 1
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
