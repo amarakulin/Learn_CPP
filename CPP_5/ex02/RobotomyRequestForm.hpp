@@ -19,7 +19,7 @@
 #include <iostream>
 #include "Form.hpp"
 
-class RobotomyRequestForm : public Form{
+class RobotomyRequestForm : virtual public Form{
 	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(RobotomyRequestForm const &copy);

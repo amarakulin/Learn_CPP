@@ -20,7 +20,7 @@
 #include <fstream>
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form{
+class ShrubberyCreationForm : virtual public Form{
 public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &target);
