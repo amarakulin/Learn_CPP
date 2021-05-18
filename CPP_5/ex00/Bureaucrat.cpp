@@ -16,12 +16,9 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(){
-	this->_name = "No _name";
-	this->_grade = _minGrade;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade){
-	this->_name = name;
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name){
 	try {
 		if(grade < this->_maxGrade){
 			throw Bureaucrat::GradeTooHighException();
@@ -42,7 +39,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy){
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &assign){
 	if (this != &assign){
-		this->_name = assign.getName();
 		this->_grade = assign.getGrade();
 	}
 	return *this;
