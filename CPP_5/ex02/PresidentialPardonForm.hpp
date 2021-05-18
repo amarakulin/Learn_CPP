@@ -16,11 +16,16 @@
 #ifndef CPP_5_PRESIDENTIALPARDONFORM_HPP
 #define CPP_5_PRESIDENTIALPARDONFORM_HPP
 
+#include "Form.hpp"
 
-class PresidentialPardonForm
-{
-
+class PresidentialPardonForm : virtual public Form{
+public:
+	PresidentialPardonForm();
+	PresidentialPardonForm(const std::string &target);
+	PresidentialPardonForm(PresidentialPardonForm const &copy);
+	PresidentialPardonForm& operator=(const PresidentialPardonForm &assign);
+	~PresidentialPardonForm();
 };
 
 
-#endif //CPP_5_PRESIDENTIALPARDONFORM_HPP
+#endif
