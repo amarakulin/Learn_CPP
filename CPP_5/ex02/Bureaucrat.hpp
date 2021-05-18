@@ -33,6 +33,7 @@ public:
 	void incrementGrage();
 	void decrementGrage();
 	void signForm(Form *form);
+	void executeForm(Form const & form) const;
 	class GradeTooHighException : public std::exception{
 		const char *what() const throw();
 	};
