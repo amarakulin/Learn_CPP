@@ -112,8 +112,8 @@ bool Form::isSign() const{
 }
 
 void Form::execute(const Bureaucrat &executor) const{
-	if (this->_gradeExecute >= executor.getGrade()){
-		executor.executeForm(*this);
+	if (this->isSign() && this->_gradeExecute >= executor.getGrade()){
+//		Form::execute(executor);
 	}
 	else{
 		throw Form::GradeTooLowException();
