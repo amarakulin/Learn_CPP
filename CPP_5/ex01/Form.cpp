@@ -73,7 +73,6 @@ Form::~Form(){
 void Form::beSigned(Bureaucrat *bureaucrat){
 	try{
 		if (bureaucrat->getGrade() <= this->_gradeSign){
-			std::cout << bureaucrat->getName() << " sign the " << this->_name << " form" << std::endl;
 			this->_sign = true;
 		}
 		else{
