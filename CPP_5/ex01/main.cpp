@@ -15,23 +15,16 @@
 #include "Bureaucrat.hpp"
 
 int main(){
-	Bureaucrat Bob("Bob", -1);
-	Bureaucrat Jim("Jim", 151);
-	Bureaucrat Rob("Rob", 50);
+	Bureaucrat Rob("Rob", 7);
 	Bureaucrat Fred("Fred", 3);
-	for (int i = 0; i < 99; i++){
-		Rob.decrementGrage();
-	}
-	Fred.incrementGrage();
-	Fred.incrementGrage();
-	std::cout << Rob << std::endl;
-	std::cout << Fred << std::endl;
-
-	Fred.incrementGrage();
-	Fred.incrementGrage();
-	Rob.decrementGrage();
-	Rob.decrementGrage();
-	std::cout << Rob << std::endl;
-	std::cout << Fred << std::endl;
+	Form form1("Form1", 5, 5);
+	Form form2("Form2", -1, 151);
+	Rob.signForm(&form1);
+	Rob.incrementGrage();
+	Rob.incrementGrage();
+	Rob.signForm(&form1);
+	Fred.signForm(&form1);
+	std::cout << form1 << std::endl;
+	std::cout << form2 << std::endl;
 	return (0);
 }
