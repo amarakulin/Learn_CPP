@@ -20,14 +20,14 @@
 #include "Form.hpp"
 
 class RobotomyRequestForm : virtual public Form{
+public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(RobotomyRequestForm const &copy);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm &assign);
 	~RobotomyRequestForm();
 
-private:
-	void getActionString(std::string target) const;
+	void execute(Bureaucrat const & executor) const;
 };
 
 

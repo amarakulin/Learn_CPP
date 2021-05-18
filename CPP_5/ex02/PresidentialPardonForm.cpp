@@ -20,7 +20,6 @@ PresidentialPardonForm::PresidentialPardonForm(){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form(target, 25, 5){
-	std::cout << target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(
@@ -36,3 +35,9 @@ PresidentialPardonForm::operator=(const PresidentialPardonForm &assign){
 PresidentialPardonForm::~PresidentialPardonForm(){
 
 }
+
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const{
+	Form::execute(executor);
+	std::cout << this->getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+}
+

@@ -28,9 +28,10 @@ public:
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &assign);
 	~ShrubberyCreationForm();
 
+	void execute(Bureaucrat const & executor) const;
+
 private:
-	void createTree(std::string target);
-	std::string getStringTree();
+	std::string getStringTree() const;
 };
 
 

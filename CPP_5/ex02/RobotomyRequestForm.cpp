@@ -20,7 +20,6 @@ RobotomyRequestForm::RobotomyRequestForm(){
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form(target, 72, 45){
-	getActionString(target);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy){
@@ -36,13 +35,15 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 
 }
 
-void RobotomyRequestForm::getActionString(std::string target) const{
+
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const{
+	Form::execute(executor);
 	std::srand(std::time(NULL));
 	int randIdx = rand() % 2;
 	std::string actionsStrings[2] = {
-			"*drilling noises*\n " + target +
+			"*drilling noises*\n " + this->getName() +
 			+ " has been robotomized successfully 50% of the time.",
-			"Can't drilling the " + target};
+			"Can't drilling the " + this->getName()};
 
 	std::cout << actionsStrings[randIdx] << std::endl;
 }
