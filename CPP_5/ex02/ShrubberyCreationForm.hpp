@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   ShrubberyCreationForm.hpp                                                        / V\     */
+/*   ShrubberyCreationForm.hpp                                         / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -16,11 +16,22 @@
 #ifndef CPP_5_SHRUBBERYCREATIONFORM_HPP
 #define CPP_5_SHRUBBERYCREATIONFORM_HPP
 
+#include <iostream>
+#include <fstream>
+#include "Form.hpp"
 
-class ShrubberyCreationForm
-{
+class ShrubberyCreationForm : public Form{
+public:
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(const std::string &target);
+	ShrubberyCreationForm(ShrubberyCreationForm const &copy);
+	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &assign);
+	~ShrubberyCreationForm();
 
+private:
+	void createTree(std::string target);
+	std::string getStringTree();
 };
 
 
-#endif //CPP_5_SHRUBBERYCREATIONFORM_HPP
+#endif
