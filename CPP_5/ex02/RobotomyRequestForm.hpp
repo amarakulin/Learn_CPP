@@ -16,11 +16,19 @@
 #ifndef CPP_5_ROBOTOMYREQUESTFORM_HPP
 #define CPP_5_ROBOTOMYREQUESTFORM_HPP
 
+#include <iostream>
+#include "Form.hpp"
 
-class RobotomyRequestForm
-{
+class RobotomyRequestForm : public Form{
+	RobotomyRequestForm();
+	RobotomyRequestForm(const std::string &target);
+	RobotomyRequestForm(RobotomyRequestForm const &copy);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm &assign);
+	~RobotomyRequestForm();
 
+private:
+	void getActionString(std::string target) const;
 };
 
 
-#endif //CPP_5_ROBOTOMYREQUESTFORM_HPP
+#endif
