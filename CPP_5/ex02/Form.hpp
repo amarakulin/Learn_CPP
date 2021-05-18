@@ -39,6 +39,7 @@ public:
 	int getGradeSign() const;
 	int getGradeExecute() const;
 	bool isSign() const;
+	void execute(Bureaucrat const & executor) const;
 
 private:
 	const std::string _name;

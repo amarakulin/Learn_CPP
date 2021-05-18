@@ -108,4 +108,8 @@ bool Form::isSign() const{
 	return _sign;
 }
 
+void Form::execute(const Bureaucrat &executor) const{
+	executor.
+}
+
 
