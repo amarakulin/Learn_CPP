@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 class Bureaucrat{
 public:
@@ -31,6 +32,7 @@ public:
 	const std::string &getName() const;
 	void incrementGrage();
 	void decrementGrage();
+	void signForm(Form *form);
 	class GradeTooHighException : public std::exception{
 		const char *what() const throw();
 	};

@@ -81,6 +81,16 @@ void Bureaucrat::decrementGrage(){
 	}
 }
 
+void Bureaucrat::signForm(Form *form){
+	form->beSigned(this);
+	if (form->isSign()){
+		std::cout << this->getName() << " signs " << form->getName() << std::endl;
+	}
+	else{
+		std::cout << this->getName() << " cannot sign " << form->getName() << std::endl;
+	}
+}
+
 const char *Bureaucrat::GradeTooHighException::what() const throw(){
 	return "Grade too high";
 }
