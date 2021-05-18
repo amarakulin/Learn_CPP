@@ -18,7 +18,7 @@
 
 Form::Form()
 		: _name("No name"), _gradeSign(1), _gradeExecute(1){
-	this->_isSign = false;
+	this->_sign = false;
 }
 
 Form::Form(const std::string &name, int gradeSign, int gradeExecute)
@@ -36,34 +36,45 @@ Form::Form(const std::string &name, int gradeSign, int gradeExecute)
 	catch (std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
-	this->_isSign = false;
+	this->_sign = false;
 }
 
 Form::Form(const Form &copy)
 		: _name(copy.getName()),
-		_gradeExecute(copy._gradeExecute),
-		_gradeSign(copy._gradeSign),
-		_isSign(copy.isIsSign())
+		  _gradeExecute(copy._gradeExecute),
+		  _gradeSign(copy._gradeSign),
+		  _sign(copy.isSign())
 {
 	operator=(copy);
 }
 
 Form &Form::operator=(const Form &assign){
 	if (this != &assign){
-		this->_isSign = assign._isSign;
+		this->_sign = assign._sign;
 	}
 	return *this;
 }
 
-Form::~Form(){
+std::ostream &operator<<(std::ostream &out, const Form &form){
+	std::string sign;
+	if (form.isSign()){
+		sign = "has";
+	}
+	else{
+		sign = "hasn't";
+	}
+	out << "Form " + form.getName() << " " << sign <<  " been signed";
+	return out;
+}
 
+Form::~Form(){
 }
 
 void Form::beSigned(Bureaucrat *bureaucrat){
 	try{
 		if (bureaucrat->getGrade() <= this->_gradeSign){
 			std::cout << bureaucrat->getName() << " sign the " << this->_name << " form" << std::endl;
-			this->_isSign = true;
+			this->_sign = true;
 		}
 		else{
 			throw GradeTooLowException();
@@ -94,8 +105,8 @@ const int Form::getGradeExecute() const{
 	return _gradeExecute;
 }
 
-bool Form::isIsSign() const{
-	return _isSign;
+bool Form::isSign() const{
+	return _sign;
 }
 
 

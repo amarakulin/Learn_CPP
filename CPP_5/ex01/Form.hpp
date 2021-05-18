@@ -38,14 +38,15 @@ public:
 	const std::string &getName() const;
 	const int getGradeSign() const;
 	const int getGradeExecute() const;
-	bool isIsSign() const;
+	bool isSign() const;
 
 private:
 	const std::string _name;
 	const int _gradeSign;
 	const int _gradeExecute;
-	bool _isSign;
+	bool _sign;
 };
 
+std::ostream &operator<<(std::ostream &out, const Form &form);
 
 #endif
