@@ -40,9 +40,23 @@ int main(){
 	Nick.executeForm(*scf);
 	Intern someRandomIntern;
 	Form* rrf1;
-	rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+	try{
+		rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+	}
+	catch (std::exception &e){
+		e.what();
+	}
 	Fred.signForm(rrf1);
 	Fred.executeForm(*rrf1);
+	Form* scf1;
+	try{
+		scf1 = someRandomIntern.makeForm("fadsf", "Bender");
+		Fred.signForm(scf1);
+		Fred.executeForm(*scf1);
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 	delete ppf;
 	delete rrf;
 	delete scf;
