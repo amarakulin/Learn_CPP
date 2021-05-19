@@ -63,6 +63,7 @@ Intern::~Intern(){
 Form *Intern::makeForm(const std::string &nameForm, const std::string &target){
 	for (int i = 0; i < 3; i++){
 		if (this->createFromStruct[i].nameForm == nameForm){
+			std::cout << "Intern creates " << nameForm << std::endl;
 			return this->createFromStruct[i].createFrom(target);
 		}
 	}
