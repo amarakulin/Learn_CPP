@@ -17,6 +17,12 @@
 #define CPP_5_INTERN_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+typedef struct s_createFrom{
+	std::string		nameForm;
+	Form			*(*createFrom)(const std::string &target);
+}		t_createFrom;
 
 class Intern{
 public:
@@ -24,6 +30,11 @@ public:
 	Intern(Intern const &copy);
 	Intern& operator=(const Intern &assign);
 	~Intern();
+
+	Form *makeForm(const std::string &nameForm, const std::string &target);
+
+private:
+	t_createFrom createFromStruct[3];
 };
 
 
