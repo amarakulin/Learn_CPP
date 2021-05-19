@@ -16,6 +16,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(){
 	Bureaucrat Rob("Rob", 26);
@@ -37,9 +38,14 @@ int main(){
 	Rob.executeForm(*ppf);
 	Fred.executeForm(*rrf);
 	Nick.executeForm(*scf);
-
+	Intern someRandomIntern;
+	Form* rrf1;
+	rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+	Fred.signForm(rrf1);
+	Fred.executeForm(*rrf1);
 	delete ppf;
 	delete rrf;
 	delete scf;
+	delete rrf1;
 	return (0);
 }
