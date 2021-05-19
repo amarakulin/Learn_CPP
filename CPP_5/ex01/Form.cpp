@@ -15,12 +15,6 @@
 
 #include "Form.hpp"
 
-
-Form::Form()
-		: _name("No name"), _gradeSign(1), _gradeExecute(1){
-	this->_sign = false;
-}
-
 Form::Form(const std::string &name, int gradeSign, int gradeExecute)
 		: _name(name),
 		_gradeSign(gradeSign),

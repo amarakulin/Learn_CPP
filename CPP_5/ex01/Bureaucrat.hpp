@@ -22,7 +22,6 @@ class Bureaucrat;
 
 class Bureaucrat{
 public:
-	Bureaucrat();
 	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(Bureaucrat const &copy);
 	Bureaucrat& operator=(const Bureaucrat &assign);
@@ -41,6 +40,7 @@ public:
 	};
 
 private:
+	Bureaucrat();
 	const std::string _name;
 	int _grade;
 };

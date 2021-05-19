@@ -21,7 +21,6 @@ class Form;
 
 class Form{
 public:
-	Form();
 	Form(const std::string &name, int gradeSign, int gradeExecute);
 	Form(Form const &copy);
 	Form& operator=(const Form &assign);
@@ -41,6 +40,7 @@ public:
 	bool isSign() const;
 
 private:
+	Form();
 	const std::string _name;
 	const int _gradeSign;
 	const int _gradeExecute;
