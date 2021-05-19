@@ -21,13 +21,16 @@
 
 class RobotomyRequestForm : virtual public Form{
 public:
-	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(RobotomyRequestForm const &copy);
 	RobotomyRequestForm& operator=(const RobotomyRequestForm &assign);
 	~RobotomyRequestForm();
 
 	void execute(Bureaucrat const & executor) const;
+
+private:
+	RobotomyRequestForm();
+
 };
 
 

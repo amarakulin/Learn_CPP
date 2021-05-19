@@ -22,7 +22,6 @@
 
 class ShrubberyCreationForm : virtual public Form{
 public:
-	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &target);
 	ShrubberyCreationForm(ShrubberyCreationForm const &copy);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &assign);
@@ -31,6 +30,7 @@ public:
 	void execute(Bureaucrat const & executor) const;
 
 private:
+	ShrubberyCreationForm();
 	std::string getStringTree() const;
 };
 

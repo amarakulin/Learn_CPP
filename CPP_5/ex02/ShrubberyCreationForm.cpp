@@ -15,9 +15,6 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(){
-
-}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form(target, 145, 137){
 }

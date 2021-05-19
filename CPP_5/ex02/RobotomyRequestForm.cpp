@@ -15,10 +15,6 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(){
-
-}
-
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form(target, 72, 45){
 }
 
