@@ -33,13 +33,14 @@ static Form *createSF(const std::string &target){
 	return (new ShrubberyCreationForm(target));
 }
 
+const t_createFrom Intern::_arrFormStruct[] = {
+		{.nameForm = "presidential pardon", .createFrom = createPPF},
+		{.nameForm = "robotomy request", .createFrom = createRRF},
+		{.nameForm = "shrubbery creation", .createFrom = createSF},
+		{.nameForm = "", .createFrom = nullptr},
+};
+
 Intern::Intern(){
-	createFromStruct[0].nameForm = "presidential pardon";
-	createFromStruct[1].nameForm = "robotomy request";
-	createFromStruct[2].nameForm = "shrubbery creation";
-	createFromStruct[0].createFrom = createPPF;
-	createFromStruct[1].createFrom = createRRF;
-	createFromStruct[2].createFrom = createSF;
 }
 
 Intern::Intern(const Intern &copy){
@@ -47,11 +48,7 @@ Intern::Intern(const Intern &copy){
 }
 
 Intern &Intern::operator=(const Intern &assign){
-	if (this != &assign){
-		for (int i = 0; i < 3; i++){
-			this->createFromStruct[i] = assign.createFromStruct[i];
-		}
-	}
+	(void)assign;
 	return *this;
 }
 
@@ -59,14 +56,22 @@ Intern::~Intern(){
 
 }
 
+const char *Intern::wrongNameFormException::what() const throw(){
+	return "Wrong name form";
+}
+
 
 Form *Intern::makeForm(const std::string &nameForm, const std::string &target){
-	for (int i = 0; i < 3; i++){
-		if (this->createFromStruct[i].nameForm == nameForm){
+	Form *fondForm = nullptr;
+	for (int i = 0; _arrFormStruct[i].createFrom; i++){
+		if (_arrFormStruct[i].nameForm == nameForm){
 			std::cout << "Intern creates " << nameForm << std::endl;
-			return this->createFromStruct[i].createFrom(target);
+			fondForm = _arrFormStruct[i].createFrom(target);
 		}
 	}
-	return NULL;
+	if (!fondForm){
+		throw Intern::wrongNameFormException();
+	}
+	return fondForm;
 }
 

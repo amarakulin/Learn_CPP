@@ -20,8 +20,8 @@
 #include "Form.hpp"
 
 typedef struct s_createFrom{
-	std::string		nameForm;
-	Form			*(*createFrom)(const std::string &target);
+	const char*		nameForm;
+	Form*			(*createFrom)(const std::string &target);
 }		t_createFrom;
 
 class Intern{
@@ -33,8 +33,12 @@ public:
 
 	Form *makeForm(const std::string &nameForm, const std::string &target);
 
+	class wrongNameFormException : public std::exception{
+		const char *what() const throw();
+	};
+
 private:
-	t_createFrom createFromStruct[3];
+	static const t_createFrom _arrFormStruct[];
 };
 
 
