@@ -23,7 +23,7 @@ int main(){
 	Rob.incrementGrage();
 	Rob.incrementGrage();
 	Rob.signForm(&form1);
-	Fred.signForm(&form1);
+	Fred.signForm(&form2);
 	std::cout << form1 << std::endl;
 	std::cout << form2 << std::endl;
 	return (0);
