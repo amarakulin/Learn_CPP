@@ -12,7 +12,7 @@
 #                                                 <__________\______)\__)      #
 # **************************************************************************** #
 
-NAME = convert
+NAME = serialization
 CLANG = clang++
 FLAGS = -Wall -Werror -Wextra
 INCLUDE = ./Include

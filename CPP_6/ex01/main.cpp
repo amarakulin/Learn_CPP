@@ -12,4 +12,13 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
+#include "Includes/SerializationHeader.hpp"
 
+void* serialize(void){
+	Data *newData = new Data();
+}
+
+int main(){
+
+	return (0);
+}
