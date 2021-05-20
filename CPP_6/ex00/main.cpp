@@ -18,8 +18,8 @@
 bool isValidArg(char *arg){
 	int i = 0;
 	std::string strArg = arg;
-	if (strArg == "nan" || strArg == "-inf" || strArg == "+inf" ||
-		strArg == "nanf" || strArg == "-inff" || strArg == "+inff")
+	if (strArg == "nan" || strArg == "inf" || strArg == "-inf" || strArg == "+inf" ||
+		strArg == "nanf" || strArg == "inff" || strArg == "-inff" || strArg == "+inff")
 		return true;
 	if(strArg[i] == '+' || strArg[i] == '-'){
 		i++;
@@ -54,7 +54,7 @@ void printCharStr(double dl){
 void printIntStr(double dl){
 	int integer = static_cast <int> (dl);
 	std::cout << "int: ";
-	if (dl >= 2147483647.0 || dl <= -2147483648.0 || dl != dl){
+	if (dl >= 2147483648.0 || dl <= -2147483649.0 || dl != dl){
 		std::cout << "impossible";
 	}
 	else{
