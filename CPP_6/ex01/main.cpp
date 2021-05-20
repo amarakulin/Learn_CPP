@@ -15,6 +15,8 @@
 #include "Includes/SerializationHeader.hpp"
 
 void* serialize(void){
+	std::srand(std::time(NULL));
+	int randIdx = rand() % 2;
 	Data *newData = new Data();
 }
 
