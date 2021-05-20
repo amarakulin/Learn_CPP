@@ -90,7 +90,6 @@ void printDoubleStr(double dl){
 
 void scalarConvertion(char* arg){
 	double dl;
-	char *ptr;
 	std::string::size_type sz;
 	if (isValidArg(arg)){
 		dl = std::stod(arg, &sz);
