@@ -15,44 +15,94 @@
 
 #include "Include/scalarConvertion.hpp"
 
-std::string getCharStr(double dl){
-	char ch;
+bool isValidArg(char *arg){
+	int i = 0;
+	std::string strArg = arg;
+	if (strArg == "nan" || strArg == "-inf" || strArg == "+inf" ||
+		strArg == "nanf" || strArg == "-inff" || strArg == "+inff")
+		return true;
+	if(strArg[i] == '+' || strArg[i] == '-'){
+		i++;
+	}
+	if(isdigit(strArg[i])){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+void printCharStr(double dl){
 	std::string output;
 	int integer = static_cast <int> (dl);
+
+	std::cout << "char: ";
 	if(std::isprint(integer)){
-		ch = static_cast <char> (integer);
-		output = "'" + std::to_string(ch) + "'";
+		output = "'";
+		output += integer;
+		output += "'";
+	}
+	else if (!isascii(integer)) {
+		output = "impossible";
 	}
 	else{
 		output = "Non displayable";
 	}
-	return output;
+	std::cout << output << std::endl;
 }
 
-std::string getIntStr(double dl){
+void printIntStr(double dl){
 	int integer = static_cast <int> (dl);
-	return std::to_string(integer);
+	std::cout << "int: ";
+	if (dl >= 2147483647.0 || dl <= -2147483648.0 || dl != dl){
+		std::cout << "impossible";
+	}
+	else{
+		std::cout << integer;
+	}
+	std::cout << std::endl;
 }
 
-std::string getFloatStr(double dl){
+void printFloatStr(double dl){
+	std::string output;
 	float fl = static_cast <float> (dl);
-	return std::to_string(fl);
+	std::cout << "float: ";
+	if ((fl - static_cast <int> (dl) == 0)){
+		std::cout << fl << ".0";
+	}
+	else{
+		std::cout << fl;
+	}
+	std::cout << "f" << std::endl;
 }
 
-std::string getDoubleStr(double dl){
-	return std::to_string(dl);
+void printDoubleStr(double dl){
+
+	std::cout << "double: ";
+	if ((dl - static_cast <int> (dl)) == 0){
+		std::cout << dl << ".0";
+	}
+	else{
+		std::cout << dl;
+	}
+	std::cout << std::endl;
 }
 
 void scalarConvertion(char* arg){
 	double dl;
-	std::string str (arg);
+	char *ptr;
 	std::string::size_type sz;
-	dl = std::stod(arg, &sz);
-	std::cout << "char: " << getCharStr(dl) << std::endl;
-	std::cout << "int: " << getIntStr(dl) << std::endl;
-	std::cout << "float: " << getFloatStr(dl) << "f" << std::endl;
-	std::cout << "double: " << getDoubleStr(dl) << std::endl;
-
+	if (isValidArg(arg)){
+		dl = std::stod(arg, &sz);
+	}
+	else{
+		std::cout << "Wrong arg" << std::endl;
+		return;
+	}
+	printCharStr(dl);
+	printIntStr(dl);
+	printFloatStr(dl);
+	printDoubleStr(dl);
 }
 
 int main(int argc, char **argv){
