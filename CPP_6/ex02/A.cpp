@@ -16,6 +16,7 @@
 #include "Include/A.hpp"
 
 A::A() : Base(){
+	std::cout << "Class 'A' has been created" << std::endl;
 	_name = "A!";
 }
 
