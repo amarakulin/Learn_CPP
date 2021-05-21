@@ -15,9 +15,9 @@
 
 #include "Include/scalarConvertion.hpp"
 
-bool isValidArg(char *arg){
+bool isValidArg(std::string strArg){
 	int i = 0;
-	std::string strArg = arg;
+//	std::string strArg = arg;
 	if (strArg == "nan" || strArg == "inf" || strArg == "-inf" || strArg == "+inf" ||
 		strArg == "nanf" || strArg == "inff" || strArg == "-inff" || strArg == "+inff")
 		return true;
@@ -90,9 +90,13 @@ void printDoubleStr(double dl){
 
 void scalarConvertion(char* arg){
 	double dl;
+	std::string strArg = arg;
 	std::string::size_type sz;
-	if (isValidArg(arg)){
-		dl = std::stod(arg, &sz);
+	if (isValidArg(strArg)){
+		dl = std::stod(strArg, &sz);
+	}
+	else if (std::isprint(strArg[0]) && strArg.length() == 1){
+		dl = static_cast <int> (strArg[0]);
 	}
 	else{
 		std::cout << "Wrong arg" << std::endl;
