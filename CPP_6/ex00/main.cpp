@@ -17,7 +17,6 @@
 
 bool isValidArg(std::string strArg){
 	int i = 0;
-//	std::string strArg = arg;
 	if (strArg == "nan" || strArg == "inf" || strArg == "-inf" || strArg == "+inf" ||
 		strArg == "nanf" || strArg == "inff" || strArg == "-inff" || strArg == "+inff")
 		return true;
