@@ -16,6 +16,7 @@
 #ifndef CPP_6_BASE_HPP
 #define CPP_6_BASE_HPP
 
+#include <iostream>
 
 class Base{
 public:

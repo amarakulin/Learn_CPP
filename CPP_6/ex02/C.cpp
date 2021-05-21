@@ -14,3 +14,21 @@
 
 
 #include "Include/C.hpp"
+
+C::C(){
+	_name = "C!";
+}
+
+C::C(const C &copy){
+	operator=(copy);
+}
+
+C &C::operator=(const C &assign){
+	if (this != &assign){
+		_name = assign._name;
+	}
+	return *this;
+}
+
+C::~C(){
+}

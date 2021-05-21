@@ -12,6 +12,11 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
+#include "Include/Base.hpp"
+
+Base * generate(void);
+void identify_from_pointer(Base * p);
+void identify_from_reference( Base & p);
 
 int main(){
 

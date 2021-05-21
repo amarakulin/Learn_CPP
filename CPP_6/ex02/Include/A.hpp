@@ -16,11 +16,18 @@
 #ifndef CPP_6_A_HPP
 #define CPP_6_A_HPP
 
+#include "Base.hpp"
 
-class A
-{
+class A : public Base{
+public:
+	A();
+	A(A const &copy);
+	A& operator=(const A &assign);
+	~A();
 
+private:
+	std::string _name;
 };
 
 
-#endif //CPP_6_A_HPP
+#endif
