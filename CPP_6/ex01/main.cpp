@@ -16,15 +16,15 @@
 
 void serializeStr(char **dataSerialize, int sizeStr){
 	int randSymbol;
-	char *copy;
-	copy = *dataSerialize;
-//	char *ch;
+//	char *copy;
+//	copy = *dataSerialize;
+	char *ch;
 	for (int i = 0; i <  + sizeStr; i++){
 		randSymbol = 65 + rand() % 15;
 		std::cout << static_cast <char> (randSymbol);
-//		ch = reinterpret_cast<char*>(copy);
-//		*ch = randSymbol;
-		*copy = static_cast <char> (randSymbol);
+//		ch = reinterpret_cast<char*>(*dataSerialize);
+//		*ch = static_cast <char> (randSymbol);
+		**dataSerialize = static_cast <char> (randSymbol);
 		(*dataSerialize)++;
 	}
 	std::cout << std::endl;
