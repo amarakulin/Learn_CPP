@@ -18,11 +18,18 @@
 
 #include <iostream>
 
+#define NUMBER_FUNCTIONS 3
+
 class Base{
 public:
 	virtual ~Base();
 
 };
+
+typedef struct createObj{
+	Base*		(*getObj)();
+}				t_createObj;
+
 
 
 #endif

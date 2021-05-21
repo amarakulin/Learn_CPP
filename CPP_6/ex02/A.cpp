@@ -15,7 +15,7 @@
 
 #include "Include/A.hpp"
 
-A::A(){
+A::A() : Base(){
 	_name = "A!";
 }
 
@@ -31,4 +31,8 @@ A &A::operator=(const A &assign){
 }
 
 A::~A(){
+}
+
+const std::string &A::getName() const{
+	return _name;
 }

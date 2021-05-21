@@ -32,3 +32,7 @@ C &C::operator=(const C &assign){
 
 C::~C(){
 }
+
+const std::string &C::getName() const{
+	return _name;
+}

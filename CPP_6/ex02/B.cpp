@@ -32,3 +32,7 @@ B &B::operator=(const B &assign){
 
 B::~B(){
 }
+
+const std::string &B::getName() const{
+	return _name;
+}

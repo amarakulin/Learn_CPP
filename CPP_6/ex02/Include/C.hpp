@@ -25,6 +25,8 @@ public:
 	C& operator=(const C &assign);
 	~C();
 
+	const std::string &getName() const;
+
 private:
 	std::string _name;
 };
