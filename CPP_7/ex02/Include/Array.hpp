@@ -46,23 +46,16 @@ public:
 		return *this;
 	}
 
-	Array& operator=(T value){
-//		delete _arrElements[idx];
-		std::cout << value << std::endl;
-
-		return *this;
-	}
-
 	T& operator[](int &idx){
 		try{
 			if (idx >= _size || idx < 0){
 				throw NotExistingElementException();
 			}
-			return _arrElements[idx];
 		}
 		catch (std::exception &e){
 			std::cout << "[-] Error: " << idx << " " << e.what() << std::endl;
 		}
+		return _arrElements[idx];
 	}
 
 	~Array(){
