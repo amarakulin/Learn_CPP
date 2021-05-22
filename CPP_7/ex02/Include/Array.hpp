@@ -47,13 +47,8 @@ public:
 	}
 
 	T& operator[](int &idx){
-		try{
-			if (idx >= _size || idx < 0){
-				throw NotExistingElementException();
-			}
-		}
-		catch (std::exception &e){
-			std::cout << "[-] Error: " << idx << " " << e.what() << std::endl;
+		if (idx >= _size || idx < 0){
+			throw NotExistingElementException();
 		}
 		return _arrElements[idx];
 	}
