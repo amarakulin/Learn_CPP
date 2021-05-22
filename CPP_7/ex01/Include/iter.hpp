@@ -18,10 +18,10 @@
 
 #include <iostream>
 
-template <typename P, typename L, typename F>
-	void iter(P ptrArr, L lenArr, F mapFunc){
+template <typename P, typename F>
+	void iter(const P* ptrArr, const size_t lenArr, F mapFunc){
 		for (int i = 0; i < lenArr; i++){
-			ptrArr[i] = mapFunc(ptrArr[i]);
+			mapFunc(ptrArr[i]);
 		}
 	}
 
