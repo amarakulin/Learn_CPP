@@ -16,9 +16,25 @@
 #ifndef CPP_8_EASYFIND_H
 #define CPP_8_EASYFIND_H
 
-template<typename T>
-T &easyfind(const T &t, const int &integer){
+#include <algorithm>
+#include <exception>
+#include <iostream>
+#include <vector>
+#include <iterator>
 
+class NotExistElementException : public std::exception{
+	const char *what() const throw(){
+		return "Elem doesn't exist";
+	}
+};
+
+template<typename T>
+typename T::iterator easyfind(T container, int value){
+	typename T::iterator elem = std::find(container.begin(), container.end(), value);
+	if (elem == container.end()){
+		throw NotExistElementException();
+	}
+	return elem;
 }
 
 #endif
