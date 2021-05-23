@@ -72,10 +72,32 @@ int Span::longestSpan(){
 			- *std::min_element(_intCollection.begin(),_intCollection.end());
 }
 
+void Span::addRundomNumbers(unsigned int size){
+	int arrNumbers[size];
+	if (size > _size){
+		throw OutOfSizeException();
+	}
+	for (unsigned int i = 0; i < size; i++){
+		arrNumbers[i] = rand() % size;
+	}
+	_intCollection.insert(_intCollection.end(), arrNumbers, arrNumbers + size);
+}
+
+void Span::printCollection(){
+	for (unsigned long i = 0; i < _intCollection.size(); i++){
+		std::cout << _intCollection[i] << " ";
+	}
+	std::cout << "" << std::endl;
+}
+
 const char *Span::FullCollectionOfNumberException::what() const throw(){
 	return "[-]Error: Collection is full";
 }
 
 const char *Span::NoSpanToFind::what() const throw(){
 	return "[-]Error: There is no Span to find";
+}
+
+const char *Span::OutOfSizeException::what() const throw(){
+	return "[-]Error: The size is bigger then size of the collection";
 }

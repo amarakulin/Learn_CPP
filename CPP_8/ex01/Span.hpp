@@ -28,6 +28,8 @@ public:
 	Span& operator=(const Span &assign);
 	~Span();
 	void addNumber(int nbr);
+	void addRundomNumbers(unsigned int size);
+	void printCollection();
 	int shortestSpan();
 	int longestSpan();
 
@@ -36,6 +38,10 @@ public:
 	};
 
 	class NoSpanToFind : public std::exception{
+		const char *what() const throw();
+	};
+
+	class OutOfSizeException : public std::exception{
 		const char *what() const throw();
 	};
 
