@@ -17,7 +17,7 @@
 #define CPP_8_EASYFIND_H
 
 template<typename T>
-easyfind(const T &t, const int &integer){
+T &easyfind(const T &t, const int &integer){
 
 }
 
