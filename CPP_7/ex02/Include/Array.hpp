@@ -23,7 +23,7 @@ template <class T>
 class Array{
 public:
 	Array(){
-		_arrElements = new T();
+		_arrElements = new T[0];
 		_size = 0;
 	}
 
