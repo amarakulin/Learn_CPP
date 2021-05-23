@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   easyfind.h                                                        / V\     */
+/*   easyfind.hpp                                                      / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -13,8 +13,8 @@
 /* **************************************************************************** */
 
 
-#ifndef CPP_8_EASYFIND_H
-#define CPP_8_EASYFIND_H
+#ifndef CPP_8_EASYFIND_HPP
+#define CPP_8_EASYFIND_HPP
 
 #include <algorithm>
 #include <exception>

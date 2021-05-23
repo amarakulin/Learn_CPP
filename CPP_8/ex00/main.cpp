@@ -12,7 +12,7 @@
 /*                                                 <__________\______)\__)      */
 /* **************************************************************************** */
 
-#include "easyfind.h"
+#include "easyfind.hpp"
 
 template <typename T, typename V>
 void testEasyFind(T container, V value){
