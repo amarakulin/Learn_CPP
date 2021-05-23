@@ -1,6 +1,6 @@
 /* **************************************************************************** */
 /*                                                                      .       */
-/*   span.hpp.h                                                        / V\     */
+/*   Span.hpp                                                          / V\     */
 /*                                                                   / `  /     */
 /*   By: tilda      <tilda@student.21-school.ru.fr>                 <<   |      */
 /*                                                                  /    |      */
@@ -19,17 +19,30 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
+#include <span>
 
-class span{
+class Span{
 public:
-	span(const unsigned int n);
-	span(span const &copy);
-	span& operator=(const span &assign);
-	~span();
+	Span(const unsigned int n);
+	Span(Span const &copy);
+	Span& operator=(const Span &assign);
+	~Span();
+	void addNumber(int nbr);
+	int shortestSpan();
+	int longestSpan();
+
+	class FullCollectionOfNumberException : public std::exception{
+		const char *what() const throw();
+	};
+
+	class NoSpanToFind : public std::exception{
+		const char *what() const throw();
+	};
 
 private:
-	span();
+	Span();
 	std::vector<int> _intCollection;
+	unsigned long _size;
 };
 
 
