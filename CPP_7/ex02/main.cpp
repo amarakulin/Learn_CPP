@@ -14,18 +14,42 @@
 
 #include "Include/Array.hpp"
 
-int main(){
+class A{
+public:
+	char ch;
 
+	A(){
+		ch = '*';
+	}
+
+	A(char ch){
+		this->ch = ch;
+	}
+
+	virtual ~A(){
+
+	}
+};
+
+int main(){
+	Array<std::string> *strArray = new Array<std::string>(10);
+	Array<A> *AArray = new Array<A>(10);
 	Array<int> *intArray = new Array<int>(10);
 	Array<double> *doubleArray = new Array<double>(10);
 
 	for (int i = 0; i < intArray->size(); ++i){
-		(*intArray)[i] = i;
-		(*doubleArray)[i] = i + 0.5;
+		std::cout << (*intArray)[i] << "\t" << (*doubleArray)[i] << "\t" << (*strArray)[i] << "\t" << (*AArray)[i].ch << '\n';
 	}
 
 	for (int i = 0; i < intArray->size(); ++i){
-		std::cout << (*intArray)[i] << "\t" << (*doubleArray)[i] << '\n';
+		(*intArray)[i] = i;
+		(*doubleArray)[i] = i + 0.5;
+		(*strArray)[i] = std::to_string(i + 100);
+		(*AArray)[i] = i + 65;
+	}
+
+	for (int i = 0; i < intArray->size(); ++i){
+		std::cout << (*intArray)[i] << "\t" << (*doubleArray)[i] << "\t" << (*strArray)[i] << "\t" << (*AArray)[i].ch << '\n';
 	}
 
 	int idx = 90;
@@ -35,5 +59,10 @@ int main(){
 	catch (std::exception &e){
 		std::cout << "[-] Error: " << idx << " " << e.what() << std::endl;
 	}
+	delete strArray;
+	delete AArray;
+	delete intArray;
+	delete doubleArray;
+
 	return (0);
 }
