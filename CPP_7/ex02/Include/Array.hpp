@@ -29,7 +29,7 @@ public:
 
 	Array(unsigned int n){
 		_arrElements = new T[n];
-		std::fill(_arrElements, _arrElements + n, 0);
+		std::fill(_arrElements, _arrElements + n, T());
 		_size = static_cast <int> (n);
 	}
 
