@@ -44,10 +44,24 @@ void Span::addNumber(int nbr){
 }
 
 int Span::shortestSpan(){
+	int result;
+	int cur;
+	int prev;
 	if (_intCollection.size() <= 1){
 		throw NoSpanToFind();
 	}
-	return 1;
+	std::sort(_intCollection.begin(), _intCollection.end());
+	cur = _intCollection[1];
+	prev = _intCollection[0];
+	result = std::abs(cur - prev);
+	for (unsigned long i = 1; i < _intCollection.size(); i++){
+		cur = _intCollection[i];
+		if (result > std::abs(cur - prev)){
+			result = std::abs(cur - prev);
+		}
+		prev = _intCollection[i];
+	}
+	return result;
 }
 
 int Span::longestSpan(){
