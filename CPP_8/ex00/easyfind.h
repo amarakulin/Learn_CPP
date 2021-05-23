@@ -21,6 +21,9 @@
 #include <iostream>
 #include <vector>
 #include <iterator>
+#include <array>
+#include <list>
+#include <set>
 
 class NotExistElementException : public std::exception{
 	const char *what() const throw(){
