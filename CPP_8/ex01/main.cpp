@@ -49,12 +49,14 @@ int main()
 	Span spTen = Span(size);
 	try{
 		spTen.addRundomNumbers(size);
+		std::cout << spTen.shortestSpan() << std::endl;
+		std::cout << spTen.longestSpan() << std::endl;
+		spTen.printCollection();
 	}
 	catch (std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << spTen.shortestSpan() << std::endl;
-	std::cout << spTen.longestSpan() << std::endl;
-	spTen.printCollection();
+
+	//TODO Проверки на exception  и создать большую структуру !!!
 }
