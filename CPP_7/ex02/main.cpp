@@ -32,6 +32,7 @@ public:
 };
 
 int main(){
+	Array<std::string> *emptyStrArray = new Array<std::string>();
 	Array<std::string> *strArray = new Array<std::string>(10);
 	Array<A> *AArray = new Array<A>(10);
 	Array<int> *intArray = new Array<int>(10);
@@ -59,10 +60,19 @@ int main(){
 	catch (std::exception &e){
 		std::cout << "[-] Error: " << idx << " " << e.what() << std::endl;
 	}
+	idx = 0;
+	try{
+		(*emptyStrArray)[idx]  = "Will be error";
+	}
+	catch (std::exception &e){
+		std::cout << "[-] Error: " << idx << " " << e.what() << std::endl;
+	}
+
 	delete strArray;
 	delete AArray;
 	delete intArray;
 	delete doubleArray;
+	delete emptyStrArray;
 
 	return (0);
 }
