@@ -18,16 +18,21 @@
 
 #include <iostream>
 
-template <typename P, typename F>
-	void iter(const P* ptrArr, const size_t lenArr, F mapFunc){
+template <typename T>
+	void iter(const T* ptrArr, const size_t lenArr, void (*func)(T const &arg)){
 		for (int i = 0; i < lenArr; i++){
-			mapFunc(ptrArr[i]);
+			func(ptrArr[i]);
 		}
 	}
 
+template <typename T>
+void print(T const &x){
+	std::cout << x << std::endl;
+}
 
-template <typename P, typename L>
-void printArr(P ptrArr, L lenArr){
+
+template <typename T>
+void printArr(const T* ptrArr, const size_t lenArr){
 	for (int i = 0; i < lenArr; i++){
 		std::cout << ptrArr[i] << " ";
 	}
