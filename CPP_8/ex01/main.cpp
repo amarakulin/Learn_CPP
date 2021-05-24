@@ -44,7 +44,7 @@ int main()
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 
-	std::cout << "============CREATE BIG COLLECTION============" << std::endl;
+	std::cout << "============CREATE RANDOM COLLECTION============" << std::endl;
 	int size = 10;
 	Span spTen = Span(size);
 	try{
@@ -57,6 +57,54 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << "============CREATE BIG RANDOM COLLECTION============" << std::endl;
+	int size1 = 10000;
+	Span spBig = Span(size1);
+	try{
+		spBig.addRundomNumbers(size1);
+		spBig.printCollection();
+		std::cout << spBig.shortestSpan() << std::endl;
+		std::cout << spBig.longestSpan() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 
-	//TODO Проверки на exception  и создать большую структуру !!!
+	std::cout << "============CREATE EMPTY COLLECTION============" << std::endl;
+	int size2 = 0;
+	Span spEmpty = Span(size2);
+	try{
+		std::cout << spEmpty.shortestSpan() << std::endl;
+		std::cout << spEmpty.longestSpan() << std::endl;
+		spBig.printCollection();
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "============CREATE SMALL COLLECTION============" << std::endl;
+	int size3 = 1;
+	Span spSmall = Span(size3);
+	try{
+		spSmall.addNumber(2);
+		spSmall.printCollection();
+		std::cout << spSmall.shortestSpan() << std::endl;
+		std::cout << spSmall.longestSpan() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "============CREATE UNFILLED COLLECTION============" << std::endl;
+	int size4 = 5;
+	Span spUnfilled = Span(size4);
+	try{
+		spUnfilled.addRundomNumbers(6);
+		spUnfilled.printCollection();
+		std::cout << spUnfilled.shortestSpan() << std::endl;
+		std::cout << spUnfilled.longestSpan() << std::endl;
+	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
 }
