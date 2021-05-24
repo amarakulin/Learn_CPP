@@ -19,7 +19,8 @@
 #include <iostream>
 #include <stack>
 
-class MutantStack{
+template <class T>
+class MutantStack : public std::stack<typename T::value_type, T>{
 public:
 	MutantStack();
 	MutantStack(MutantStack const &copy);
@@ -27,6 +28,26 @@ public:
 	~MutantStack();
 
 };
+
+template<class T>
+MutantStack<T>::MutantStack(){
+
+}
+
+template<class T>
+MutantStack<T>::MutantStack(const MutantStack &copy){
+
+}
+
+template<class T>
+MutantStack<T> &MutantStack<T>::operator=(const MutantStack &assign){
+	return ;
+}
+
+template<class T>
+MutantStack<T>::~MutantStack(){
+
+}
 
 
 #endif
