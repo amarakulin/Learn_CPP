@@ -14,6 +14,17 @@
 
 #include "MutantStack.hpp"
 
+template <class Colletion>
+void printCollection(Colletion &c){
+	typename Colletion::iterator it = c.begin();
+	typename Colletion::iterator ite = c.end();
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+}
+
 void testString(){
 	MutantStack<std::string> mstack;
 	mstack.push("Hello");
@@ -22,13 +33,7 @@ void testString(){
 	mstack.push("5.2");
 	mstack.push("La");
 	mstack.push("|");
-	MutantStack<std::string>::iterator it = mstack.begin();
-	MutantStack<std::string>::iterator ite = mstack.end();
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
+	printCollection(mstack);
 	std::cout << "Top -> " << mstack.top() << std::endl;
 	std::cout << "Size -> " << mstack.size() << std::endl;
 	std::stack<std::string> s(mstack);
@@ -45,13 +50,7 @@ void testFloat(){
 	mstack.push(5.2);
 	mstack.push(737);
 	mstack.push(.567);
-	MutantStack<float>::iterator it = mstack.begin();
-	MutantStack<float>::iterator ite = mstack.end();
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
+	printCollection(mstack);
 	std::cout << "Top -> " << mstack.top() << std::endl;
 	std::cout << "Size -> " << mstack.size() << std::endl;
 	std::stack<float> s(mstack);
@@ -82,7 +81,9 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
-	std::cout << s.size() << std::endl;
+	std::cout << "Size of copy-> " << s.size() << std::endl;
+	std::cout << "Top of copy-> " << s.top() << std::endl;
+
 	std::cout << "=================My tests=================" << std::endl;
 	std::cout << "=================test float=================" << std::endl;
 	testFloat();
