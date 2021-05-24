@@ -20,34 +20,19 @@
 #include <algorithm>
 #include <stack>
 #include <queue>
-
-//template <typename T>
-//class iterator : public std::iterator<std::bidirectional_iterator_tag, T>{
-//public:
-//	void test(){}
-//
-//	iterator begin(){
-//		return ;
-//	}
-//	iterator end(){
-//		return ;
-//	}
-//};
+#include <iterator>
 
 template <typename T, class Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>{
 public:
 	typedef typename std::stack<T, Container>::container_type::iterator iterator;
-	iterator &begin(){
-		return (iterator(this->c[0]));
+	iterator begin(){
+		return (std::begin(this->c));
 	}
 
-	iterator &end(){
-		return (iterator(this->c[static_cast <int> (this->size())]));
+	iterator end(){
+		return (std::end(this->c));
 	}
-
-
-
 
 
 	MutantStack()
@@ -57,16 +42,15 @@ public:
 
 	MutantStack(MutantStack const &copy)
 	{
-
+		(void)copy;
 	}
 
 	MutantStack& operator=(const MutantStack &assign)
 	{
-		return ;
+		return assign;
 	}
 
-	~MutantStack()
-	{
+	~MutantStack(){
 
 	}
 };
