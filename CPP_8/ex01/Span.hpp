@@ -23,7 +23,7 @@
 
 class Span{
 public:
-	Span(const unsigned int n);
+	Span(unsigned int n);
 	Span(Span const &copy);
 	Span& operator=(const Span &assign);
 	~Span();

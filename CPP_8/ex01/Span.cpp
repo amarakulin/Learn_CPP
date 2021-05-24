@@ -15,7 +15,7 @@
 
 #include "Span.hpp"
 
-Span::Span(const unsigned int n){
+Span::Span(unsigned int n){
 	_intCollection.reserve(n);
 	_size = static_cast <unsigned long> (n);
 }
