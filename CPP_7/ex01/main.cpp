@@ -17,12 +17,6 @@
 class A{
 public:
 	A(void): _n(42){}
-//	bool operator==(A const & rhs) const {return (this->_n == rhs._n);}
-//	bool operator!=(A const & rhs) const {return (this->_n != rhs._n);}
-//	bool operator>(A const & rhs) const {return (this->_n > rhs._n);}
-//	bool operator<(A const & rhs) const {return (this->_n < rhs._n);}
-//	bool operator>=(A const & rhs) const {return (this->_n >= rhs._n);}
-//	bool operator<=(A const & rhs) const {return (this->_n <= rhs._n);}
 
 	int getN() const{
 		return _n;
