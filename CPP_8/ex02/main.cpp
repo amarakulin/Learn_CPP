@@ -14,50 +14,6 @@
 
 #include "MutantStack.hpp"
 
-//void testIntList(){
-//	MutantStack<int> mstack;
-//	mstack.push("Hello");
-//	mstack.push("as");
-//	mstack.push("tcyvbu");
-//	mstack.push("5.2");
-//	mstack.push("La");
-//	mstack.push("|");
-//	MutantStack<int>::iterator it = mstack.begin();
-//	MutantStack<int>::iterator ite = mstack.end();
-//	while (it != ite)
-//	{
-//		std::cout << it << std::endl;
-//		++it;
-//	}
-//	std::cout << "Top -> " << mstack.top() << std::endl;
-//	std::cout << "Size -> " << mstack.size() << std::endl;
-//	std::list<std::string> s(mstack);
-//	std::cout << "Size of copy-> " << s.size() << std::endl;
-////	std::cout << "Top of copy-> " << s.top() << std::endl;
-//}
-//
-//void testStringList(){
-//	MutantStack<std::string> mstack;
-//	mstack.push("Hello");
-//	mstack.push("as");
-//	mstack.push("tcyvbu");
-//	mstack.push("5.2");
-//	mstack.push("La");
-//	mstack.push("|");
-//	MutantStack<std::string>::iterator it = mstack.begin();
-//	MutantStack<std::string>::iterator ite = mstack.end();
-//	while (it != ite)
-//	{
-//		std::cout << it << std::endl;
-//		++it;
-//	}
-//	std::cout << "Top -> " << mstack.top() << std::endl;
-//	std::cout << "Size -> " << mstack.size() << std::endl;
-//	std::list<std::string> s(mstack);
-//	std::cout << "Size of copy-> " << s.size() << std::endl;
-////	std::cout << "Top of copy-> " << s.top() << std::endl;
-//}
-
 void testString(){
 	MutantStack<std::string> mstack;
 	mstack.push("Hello");
@@ -128,11 +84,9 @@ int main()
 	std::stack<int> s(mstack);
 	std::cout << s.size() << std::endl;
 	std::cout << "=================My tests=================" << std::endl;
-	std::cout << "=================test float stack=================" << std::endl;
+	std::cout << "=================test float=================" << std::endl;
 	testFloat();
-	std::cout << "=================test string stack=================" << std::endl;
+	std::cout << "=================test string=================" << std::endl;
 	testString();
-//	std::cout << "=================test string list=================" << std::endl;
-//	testStringList();
 	return 0;
 }
