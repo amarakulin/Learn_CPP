@@ -20,9 +20,10 @@
 #include <algorithm>
 #include <stack>
 #include <queue>
+#include <list>
 #include <iterator>
 
-template <typename T, class Container = std::deque<T> >
+template <class T, class Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>{
 public:
 	typedef typename std::stack<T, Container>::container_type::iterator iterator;
@@ -35,19 +36,19 @@ public:
 	}
 
 
-	MutantStack()
-	{
+	MutantStack(){
 
 	}
 
-	MutantStack(MutantStack const &copy)
-	{
-		(void)copy;
+	MutantStack(MutantStack const &copy){
+		operator=(copy);
 	}
 
-	MutantStack& operator=(const MutantStack &assign)
-	{
-		return assign;
+	MutantStack& operator=(const MutantStack &assign){
+		if (this != &assign){
+			static_cast <std::stack<T, Container> > (this) = static_cast <std::stack<T, Container> > (assign);
+		}
+		return *this;
 	}
 
 	~MutantStack(){
